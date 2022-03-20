@@ -10,8 +10,8 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Change leader to a comma
-vim.g.mapleader = ','
+-- Change leader to spacebar
+vim.g.mapleader = ' '
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -31,7 +31,7 @@ map('', '<right>', '<nop>')
 
 -- Fast saving with <leader> and s
 map('n', '<leader>s', ':w<CR>')
-map('i', '<leader>s', '<C-c>:w<CR>')
+-- map('i', '<leader>s', '<C-c>:w<CR>')
 
 -- Move around splits using Ctrl + {h,j,k,l}
 map('n', '<C-h>', '<C-w>h')
@@ -40,7 +40,7 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- Close all windows and exit from Neovim with <leader> and q
-map('n', '<leader>q', ':qa!<CR>')
+-- map('n', '<leader>q', ':qa!<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
