@@ -6,6 +6,22 @@
 Neovim KISS configuration with Lua
 </h3>
 
+## Install NeoVim
+
+``` bash
+brew tap homebrew/cask-fonts
+brew install font-jetbrains-mono-nerd-font
+brew install ripgrep
+brew install neovim
+```
+
+Clone this repo and link it to the nvim config.
+
+``` bash
+git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/neovim-lua
+ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
+```
+
 ## Plugins
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim) -  A use-package inspired plugin manager for Neovim
@@ -27,6 +43,8 @@ Neovim KISS configuration with Lua
 [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Auto completion plugin
 
 [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of common configurations for Neovim's built-in language server client
+
+[nvim-telescope](https://github.com/nvim-telescope/telescope.nvim) - A fuzzy finder
 
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Engine for Neovim written in Lua
 
@@ -52,6 +70,7 @@ Neovim KISS configuration with Lua
 │   │   ├── nvim-lspconfig.lua
 │   │   ├── nvim-tree.lua
 │   │   ├── nvim-treesitter.lua
+│   │   ├── nvim-telescope.lua
 │   │   └── vista.lua
 │   └── packer_init.lua
 ├── plugin

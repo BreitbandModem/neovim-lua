@@ -39,8 +39,12 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
+-- Resize splits
+map('n', '<leader>+', ':vertical resize +5<CR>')
+map('n', '<leader>-', ':vertical resize -5<CR>')
+
 -- Close all windows and exit from Neovim with <leader> and q
--- map('n', '<leader>q', ':qa!<CR>')
+map('n', '<leader>q', ':qa<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
@@ -54,6 +58,14 @@ map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')       -- refresh
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
+
+-- Telescope
+map('n', '<leader>ff', ':Telescope find_files<CR>')
+map('n', '<leader>fg', ':Telescope live_grep<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
+map('n', '<leader>vrc', ":lua require('plugins/nvim-telescope').search_dotfiles()<CR>")
+
 
 -- Vista tag-viewer
 map('n', '<C-m>', ':Vista!!<CR>') -- open/close
