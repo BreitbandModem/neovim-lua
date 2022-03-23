@@ -52,6 +52,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 
 [alpha-nvim](https://github.com/goolord/alpha-nvim) - A fast and highly customizable greeter for neovim.
 
+[comment](https://github.com/numToStr/Comment.nvim) - Comment code
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
@@ -64,6 +66,7 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 │   │   └── settings.lua
 │   ├── plugins
 │   │   ├── alpha-nvim.lua
+│   │   ├── comment.lua
 │   │   ├── feline.lua
 │   │   ├── indent-blankline.lua
 │   │   ├── nvim-cmp.lua

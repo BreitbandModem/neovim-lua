@@ -90,4 +90,9 @@ return packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  -- numToStr/Comment.nvim to comment code
+  use {
+    'numToStr/Comment.nvim',
+}
 end)
