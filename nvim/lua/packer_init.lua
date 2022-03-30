@@ -105,4 +105,9 @@ return packer.startup(function()
   use {
     'vim-test/vim-test',
   }
+
+  -- folke/zen-mode.nvim to maximize the current buffer
+  use {
+    'folke/zen-mode.nvim',
+  }
 end)

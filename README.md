@@ -59,6 +59,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 
 [vim-test](https://github.com/vim-test/vim-test) - Unit Test execution from neovim
 
+[zen-mode](https://github.com/folke/zen-mode.nvim) - Distraction free coding by maximizing current buffer
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`

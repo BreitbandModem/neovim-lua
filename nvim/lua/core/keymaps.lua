@@ -66,6 +66,8 @@ map('n', '<leader>fb', ':Telescope buffers<CR>')
 map('n', '<leader>fh', ':Telescope help_tags<CR>')
 map('n', '<leader>vrc', ":lua require('plugins/nvim-telescope').search_dotfiles()<CR>")
 
-
 -- Vista tag-viewer
 map('n', '<C-m>', ':Vista!!<CR>') -- open/close
+
+-- ZenMode
+map('n', '<leader>z', ':ZenMode<CR>')
