@@ -23,6 +23,8 @@ opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 opt.timeoutlen = 400                  -- Timeout before which-key is activated
+opt.ssop:remove('options')            -- do not store global and local values in a session
+opt.ssop:remove('folds')              -- do not store folds
 
 -----------------------------------------------------------
 -- Neovim UI
