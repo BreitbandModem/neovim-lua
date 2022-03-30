@@ -94,5 +94,10 @@ return packer.startup(function()
   -- numToStr/Comment.nvim to comment code
   use {
     'numToStr/Comment.nvim',
-}
+  }
+
+  -- ellisonleao/glow.nvim for markdown preview
+  use {
+    'ellisonleao/glow.nvim',
+  }
 end)

@@ -13,6 +13,7 @@ brew tap homebrew/cask-fonts
 brew install font-jetbrains-mono-nerd-font
 brew install ripgrep
 brew install neovim
+brew install glow
 ```
 
 Clone this repo and link it to the nvim config.
@@ -54,6 +55,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 
 [comment](https://github.com/numToStr/Comment.nvim) - Comment code
 
+[glow](https://github.com/ellisonleao/glow.nvim) - Open glow markdown preview in popup window
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
@@ -68,6 +71,7 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 │   │   ├── alpha-nvim.lua
 │   │   ├── comment.lua
 │   │   ├── feline.lua
+│   │   ├── glow.lua
 │   │   ├── indent-blankline.lua
 │   │   ├── nvim-cmp.lua
 │   │   ├── nvim-lspconfig.lua
