@@ -23,6 +23,12 @@ git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/ne
 ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 ```
 
+Install Treesitter modules.
+``` nvim
+:TSInstall javascript
+:TSInstall lua
+```
+
 ## Plugins
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim) -  A use-package inspired plugin manager for Neovim
