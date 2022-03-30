@@ -20,6 +20,10 @@ vim.g.mapleader = ' '
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
+-- Stay in visual mode when indenting lindes
+map('v', '<', '<gv')
+map('v', '>', '>gv')
+
 -- Map Esc to kk
 map('i', 'kk', '<Esc>')
 
