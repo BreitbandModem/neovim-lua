@@ -100,4 +100,9 @@ return packer.startup(function()
   use {
     'ellisonleao/glow.nvim',
   }
+
+  -- vim-test/vim-test unit test integration
+  use {
+    'vim-test/vim-test',
+  }
 end)

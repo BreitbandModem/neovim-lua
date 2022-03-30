@@ -57,6 +57,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 
 [glow](https://github.com/ellisonleao/glow.nvim) - Open glow markdown preview in popup window
 
+[vim-test](https://github.com/vim-test/vim-test) - Unit Test execution from neovim
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
@@ -78,7 +80,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 │   │   ├── nvim-tree.lua
 │   │   ├── nvim-treesitter.lua
 │   │   ├── nvim-telescope.lua
-│   │   └── vista.lua
+│   │   ├── vista.lua
+│   │   └── vim-test.lua
 │   └── packer_init.lua
 ├── plugin
 │   └── packer_compiled.lua
