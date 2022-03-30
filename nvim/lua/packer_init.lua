@@ -22,9 +22,6 @@ return packer.startup(function()
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
-  -- Indent line
-  use 'lukas-reineke/indent-blankline.nvim'
-
   -- Autopair
   use {
     'windwp/nvim-autopairs',
@@ -40,7 +37,13 @@ return packer.startup(function()
   use 'liuchengxu/vista.vim'
 
   -- Treesitter interface
-  use 'nvim-treesitter/nvim-treesitter'
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+
+  -- Indent line
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Color schemes
   use 'navarasu/onedark.nvim'
@@ -92,22 +95,17 @@ return packer.startup(function()
   }
 
   -- numToStr/Comment.nvim to comment code
-  use {
-    'numToStr/Comment.nvim',
-  }
+  use 'numToStr/Comment.nvim'
 
   -- ellisonleao/glow.nvim for markdown preview
-  use {
-    'ellisonleao/glow.nvim',
-  }
+  use 'ellisonleao/glow.nvim'
 
   -- vim-test/vim-test unit test integration
-  use {
-    'vim-test/vim-test',
-  }
+  use 'vim-test/vim-test'
 
   -- folke/zen-mode.nvim to maximize the current buffer
-  use {
-    'folke/zen-mode.nvim',
-  }
+  use 'folke/zen-mode.nvim'
+
+  -- 'folke/which-key.nvim to show key bindings for commands
+  use 'folke/which-key.nvim'
 end)

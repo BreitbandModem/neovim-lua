@@ -22,6 +22,7 @@ opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noselect'  -- Autocomplete options
+opt.timeoutlen = 400                  -- Timeout before which-key is activated
 
 -----------------------------------------------------------
 -- Neovim UI

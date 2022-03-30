@@ -61,6 +61,8 @@ ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 
 [zen-mode](https://github.com/folke/zen-mode.nvim) - Distraction free coding by maximizing current buffer
 
+[which-key](https://github.com/folke/which-key.nvim) - Display key bindings for commands
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
