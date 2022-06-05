@@ -6,7 +6,7 @@
 Neovim KISS configuration with Lua
 </h3>
 
-## Install NeoVim
+## My Custom Installation Steps
 
 ``` bash
 brew tap homebrew/cask-fonts
@@ -22,6 +22,8 @@ Clone this repo and link it to the nvim config.
 git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/neovim-lua
 ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 ```
+
+Now follow the original installation instructions further down this document. Then come back here :)
 
 Install Treesitter modules.
 ``` nvim
