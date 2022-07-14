@@ -22,25 +22,11 @@ return packer.startup(function()
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
-  -- Autopair
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup()
-    end
-  }
-
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
   -- Tag viewer
   use 'liuchengxu/vista.vim'
-
-  -- Treesitter interface
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
 
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
@@ -51,21 +37,6 @@ return packer.startup(function()
   use 'tanvirtin/monokai.nvim'
 
   use { 'rose-pine/neovim', as = 'rose-pine' }
-
-  -- LSP
-  use 'neovim/nvim-lspconfig'
-
-  -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'saadparwaiz1/cmp_luasnip',
-    },
-  }
 
   -- Statusline
   use {
@@ -91,7 +62,10 @@ return packer.startup(function()
   -- Telescope fuzzy file finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {"nvim-telescope/telescope-live-grep-args.nvim"},
+    }
   }
 
   -- numToStr/Comment.nvim to comment code
@@ -108,4 +82,14 @@ return packer.startup(function()
 
   -- 'folke/which-key.nvim to show key bindings for commands
   use 'folke/which-key.nvim'
+  
+  -- use coc for code completion
+  use {'neoclide/coc.nvim', branch = 'release'}
+  
+  -- dap debugger
+  use {'mfussenegger/nvim-dap'}
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+  -- yank history
+  use({'gbprod/yanky.nvim'})
 end)

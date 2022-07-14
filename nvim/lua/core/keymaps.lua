@@ -49,3 +49,15 @@ map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 
 -- Vista tag-viewer
 map('n', '<C-m>', ':Vista!!<CR>') -- open/close
+
+-- COC
+-- show documentation in preview window
+map('n', 'K', ':lua show_documentation()<CR>')
+
+show_documentation = function()
+  if vim.fn.CocAction('hasProvider', 'hover') then
+    vim.fn.CocActionAsync('doHover')
+  else
+    vim.fn.feedkeys('K', 'in')
+  end
+end

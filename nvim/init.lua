@@ -10,21 +10,21 @@ Website: https://github.com/brainfucksec/neovim-lua
 -- import general vim settings
 require('core/settings')
 require('core/keymaps')
+require('core/colors')
 
 -- If not in vscode, import Lua modules
 if vim.g.vscode == nil then
   require('packer_init')
   require('plugins/nvim-tree')
+  require('plugins/yanky')
+  require('plugins/nvim-telescope')
+  require('plugins/comment')
   require('plugins/indent-blankline')
   require('plugins/feline')
   require('plugins/vista')
-  require('plugins/nvim-cmp')
-  require('plugins/nvim-lspconfig')
-  require('plugins/nvim-treesitter')
-  require('plugins/nvim-telescope')
   require('plugins/alpha-nvim')
-  require('plugins/comment')
   require('plugins/glow')
   require('plugins/vim-test')
   require('plugins/which-key')
+  require('plugins/dap')
 end

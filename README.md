@@ -6,31 +6,6 @@
 Neovim KISS configuration with Lua
 </h3>
 
-## My Custom Installation Steps
-
-``` bash
-brew tap homebrew/cask-fonts
-brew install font-jetbrains-mono-nerd-font
-brew install ripgrep
-brew install neovim
-brew install glow
-```
-
-Clone this repo and link it to the nvim config.
-
-``` bash
-git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/neovim-lua
-ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
-```
-
-Now follow the original installation instructions further down this document. Then come back here :)
-
-Install Treesitter modules.
-``` nvim
-:TSInstall javascript
-:TSInstall lua
-```
-
 ## Plugins
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim) -  A use-package inspired plugin manager for Neovim
@@ -39,23 +14,13 @@ Install Treesitter modules.
 
 [indentBlankline](https://github.com/lukas-reineke/indent-blankline.nvim) - Adds indentation guides to all lines (including empty lines)
 
-[nvim-autopairs](https://github.com/windwp/nvim-autopairs) - A super powerful autopairs for Neovim
-
 [feline.nvim](https://github.com/Famiu/feline.nvim) - A minimal, stylish and customizable statusline for Neovim written in Lua
 
 [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - A Lua fork of vim-devicons
 
 [vista.vim](https://github.com/liuchengxu/vista.vim) - View and search LSP symbols, tags in Vim/NeoVim
 
-[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer
-
-[nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Auto completion plugin
-
-[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of common configurations for Neovim's built-in language server client
-
 [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim) - A fuzzy finder
-
-[LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Engine for Neovim written in Lua
 
 [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Super fast git decorations implemented purely in lua/teal
 
@@ -71,6 +36,14 @@ Install Treesitter modules.
 
 [which-key](https://github.com/folke/which-key.nvim) - Display key bindings for commands
 
+[coc.nvim](https://github.com/neoclide/coc.nvim) - Make your Vim/Neovim as smart as VSCode
+
+[nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim
+
+[nvim-dap](https://github.com/rcarriga/nvim-dap-ui) - Visual interface for the DAP plugin
+
+[yanky](https://github.com/gbprod/yanky.nvim) - Yank history
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
@@ -82,18 +55,7 @@ Install Treesitter modules.
 │   │   ├── keymaps.lua
 │   │   └── settings.lua
 │   ├── plugins
-│   │   ├── alpha-nvim.lua
-│   │   ├── comment.lua
-│   │   ├── feline.lua
-│   │   ├── glow.lua
-│   │   ├── indent-blankline.lua
-│   │   ├── nvim-cmp.lua
-│   │   ├── nvim-lspconfig.lua
-│   │   ├── nvim-tree.lua
-│   │   ├── nvim-treesitter.lua
-│   │   ├── nvim-telescope.lua
-│   │   ├── vista.lua
-│   │   └── vim-test.lua
+│   │   └── pluginXYZ.lua
 │   └── packer_init.lua
 ├── plugin
 │   └── packer_compiled.lua
@@ -106,6 +68,8 @@ Install Treesitter modules.
 
 * [init.lua](nvim/init.lua): Main configuration file that call `lua` modules
 
+* [coc-settings.json](nvim/coc-settings.json): Configuration file for coc framework
+
 * [lua](nvim/lua): Folder of `lua` modules, here reside all the Lua modules that needed. These modules are called from `init.lua` file (see below).
 
 See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
@@ -113,6 +77,8 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 `/nvim/lua`
 
 * [packer_init.lua](nvim/lua/packer_init.lua): Load plugins
+
+* [plugins](/nvim/lua/plugins): Plugin specific configuration and setup
 
 `/nvim/lua/core`
 
@@ -122,25 +88,6 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 * [colors.lua](nvim/lua/core/colors.lua): Define Neovim and plugins color scheme
 
-`/nvim/lua/plugins`
-
-* [packer.lua](nvim/lua/plugins/packer.lua): Plugin manager settings
-
-* [alpha-nvim.lua](nvim/lua/plugins/alpha-nvim.lua): Dashboard
-
-* [feline.lua](nvim/lua/plugins/feline.lua): Statusline configuration file
-
-* [indent-blankline.lua](nvim/lua/plugins/indent-blankline.lua): Indent line
-
-* [nvim-cmp.lua](nvim/lua/plugins/nvim-cmp.lua): Autocompletion settings
-
-* [nvim-lspconfig.lua](nvim/lua/plugins/nvim-lspconfig.lua): LSP configuration (language servers, keybinding)
-
-* [nvim-tree.lua](nvim/lua/plugins/nvim-tree.lua): File manager settings
-
-* [nvim-treesitter](nvim/lua/plugins/nvim-treesitter): Treesitter interface configuration
-
-* [vista.lua](nvim/lua/plugins/vista.lua): Tag viewer settings
 
 ## Appearance
 
@@ -188,15 +135,42 @@ See: https://github.com/nanotee/nvim-lua-guide#where-to-put-lua-files
 
 1. Install [neovim v0.6.x](https://github.com/neovim/neovim/releases/latest)
 
+```term
+brew install neovim
+```
+
 2. Install [npm](https://github.com/npm/cli) (for download the packages of LSP language servers)
 
-3. Download [this repository](https://github.com/brainfucksec/neovim-lua) with `git` and copy the `nvim` folder in the `${HOME}/.config` directory (make a backup of your current `nvim` folder if necessary):
+3. Clone this repo and link it to the nvim config.
 
 ```term
-git clone https://github.com/brainfucksec/neovim-lua.git
-cd neovim-lua/
-cp -Rv nvim ~/.config/
+git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/neovim-lua
+ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
 ```
+
+4. Install some plugin dependencies
+
+```term
+# ripgrep is required for telescope
+brew install ripgrep
+
+# glow is required for markdown preview
+brew install glow
+
+# Install node-debug2 for the dap plugin
+git clone https://github.com/microsoft/vscode-node-debug2.git
+cd vscode-node-debug2
+npm install
+NODE_OPTIONS=--no-experimental-fetch npm run build
+
+# Install a custom font to support icons
+brew tap homebrew/cask-fonts
+brew install font-jetbrains-mono-nerd-font
+```
+
+Configure the newly installed font in the terminal app (e.g. iterm2).
+
+Make sure that the debug adapter config in [dap.lua](nvim/lua/plugins/dap.lua) points to the path of the cloned vscode-node-debug2 repo.
 
 4. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
 
@@ -209,17 +183,15 @@ Open Neovim and run `:PackerSync` command.
 
 See: https://github.com/wbthomason/packer.nvim#quickstart
 
-## LSP Configuration
+5. Install coc extensions:
 
-1. Install LSP language servers with `npm`
+```:CocInstall coc-css coc-eslint coc-highlight coc-html coc-json coc-lua coc-pairs coc-tsserver```
 
-```term
-sudo npm install -g bash-language-server pyright vscode-langservers-extracted typescript typescript-language-server
-```
+6. Specific fix for running mocha tests on a docker container using the vim-test plugin
 
-2. Install [clang](https://clangd.llvm.org/installation.html) for use LSP with [clangd](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd)
+Remove the additional arguments added by the vim-test mocha plugin source code:
 
-3. Open a source file of one of the supported languages with Neovim and run command [:LspInfo](https://github.com/neovim/nvim-lspconfig#built-in-commands) for testing the LSP support.
+```~/.local/share/nvim/site/pack/packer/start/vim-test/autoload/test/javascript/mocha.vim```
 
 ### Languages Currently Supported
 
