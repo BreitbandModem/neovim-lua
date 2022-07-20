@@ -39,6 +39,7 @@ dashboard.section.buttons.val = {
   dashboard.button('e', ' New file', ':ene <BAR> startinsert<CR>'),
   dashboard.button('f', ' Find file', ':NvimTreeOpen<CR>'),
   dashboard.button('s', ' Settings', ':e $MYVIMRC<CR>'),
+  dashboard.button('d', ' DotFiles', ":lua require('plugins/nvim-telescope').search_dotfiles()<CR>"),
   dashboard.button('u', ' Update plugins', ':PackerUpdate<CR>'),
   dashboard.button('q', ' Quit', ':qa<CR>'),
 }
