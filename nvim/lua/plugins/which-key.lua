@@ -59,7 +59,7 @@ local normal_leader_mappings = {
     S = {":Gitsigns stage_buffer<CR>", "Stage File"},
     u = {":Gitsigns undo_stage_hunk<CR>", "Un-Stage Hunk"},
     r = {":Gitsigns reset_hunk<CR>", "Reset Hunk"},
-    R = {":Gitsigns reset_buffer()<CR>", "Reset File"},
+    R = {":Gitsigns reset_buffer<CR>", "Reset File"},
     b = {":Gitsigns blame_line<CR>", "Blame Line"},
     n = {":Gitsigns next_hunk<CR>", "Next Hunk"},
     N = {":Gitsigns prev_hunk<CR>", "Previous Hunk"},
@@ -68,7 +68,7 @@ local normal_leader_mappings = {
   r = {
     name = "Rename/Format",
     f = { "<Plug>(coc-format-selected)<cr>", "Format Code" },
-    n = { "<Plug>(coc-rename)<cr>", "Rename Symbol" },
+    n = { "<Plug>(coc-rename)", "Rename Symbol" },
   },
   t = {
     name = "Test",
