@@ -22,6 +22,8 @@ Neovim KISS configuration with Lua
 
 [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim) - A fuzzy finder
 
+[telescope-ui-select](https://github.com/nvim-telescope/telescope-ui-select.nvim) - Use telescope for vim ui.select
+
 [gitsigns](https://github.com/lewis6991/gitsigns.nvim) - Super fast git decorations implemented purely in lua/teal
 
 [alpha-nvim](https://github.com/goolord/alpha-nvim) - A fast and highly customizable greeter for neovim.

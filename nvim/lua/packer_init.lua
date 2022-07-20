@@ -68,6 +68,9 @@ return packer.startup(function()
     }
   }
 
+  -- Use telescope for vim ui.select
+  use {'nvim-telescope/telescope-ui-select.nvim' }
+
   -- numToStr/Comment.nvim to comment code
   use 'numToStr/Comment.nvim'
 
