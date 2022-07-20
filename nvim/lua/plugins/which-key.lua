@@ -50,6 +50,8 @@ local normal_leader_mappings = {
       ":lua require('plugins/nvim-telescope').search_dotfiles()<CR>",
       "Dot Files",
     },
+    r = {":Telescope oldfiles<CR>", "Recent Files" },
+    s = {":Telescope git_status<CR>", "Git Status" },
     y = {":Telescope yank_history<CR>", "Yanks" },
   },
   g = {
