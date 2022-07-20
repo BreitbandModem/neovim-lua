@@ -51,6 +51,7 @@ dap.configurations.typescript = {
     }
   },
 }
+dap.configurations.javascript = dap.configurations.typescript
 
 vim.g.dap_test_configuration = {
     type = "node2",
