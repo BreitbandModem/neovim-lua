@@ -46,6 +46,8 @@ Neovim KISS configuration with Lua
 
 [yanky](https://github.com/gbprod/yanky.nvim) - Yank history
 
+[neovim-session-manager](https://github.com/Shatur/neovim-session-manager) - Session Manager
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`

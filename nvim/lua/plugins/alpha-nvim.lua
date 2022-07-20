@@ -36,6 +36,7 @@ dashboard.section.header.val = banner
 
 -- Menu
 dashboard.section.buttons.val = {
+  dashboard.button('l', ' Load Session', ':SessionManager load_last_session<CR>'),
   dashboard.button('e', ' New file', ':ene <BAR> startinsert<CR>'),
   dashboard.button('f', ' Find file', ':NvimTreeOpen<CR>'),
   dashboard.button('s', ' Settings', ':e $MYVIMRC<CR>'),

@@ -27,4 +27,5 @@ if vim.g.vscode == nil then
   require('plugins/vim-test')
   require('plugins/which-key')
   require('plugins/dap')
+  require('plugins/neovim-session-manager')
 end

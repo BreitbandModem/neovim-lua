@@ -85,14 +85,17 @@ return packer.startup(function()
 
   -- 'folke/which-key.nvim to show key bindings for commands
   use 'folke/which-key.nvim'
-  
+
   -- use coc for code completion
   use {'neoclide/coc.nvim', branch = 'release'}
-  
+
   -- dap debugger
   use {'mfussenegger/nvim-dap'}
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   -- yank history
   use({'gbprod/yanky.nvim'})
+
+  -- session manager
+  use 'Shatur/neovim-session-manager'
 end)
