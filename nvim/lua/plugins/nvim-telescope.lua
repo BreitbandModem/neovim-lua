@@ -8,6 +8,7 @@ telescope.setup({
 		file_previewer = telescope_previewers.vim_buffer_cat.new,
 		grep_previewer = telescope_previewers.vim_buffer_vimgrep.new,
 		qflist_previewer = telescope_previewers.vim_buffer_qflist.new,
+    cache_picker = { num_pickers = 5 },
   },
   pickers = {
     find_files = {
@@ -22,17 +23,21 @@ telescope.load_extension("ui-select")
 
 local M = {}
 
--- remember last search
-local last_search = nil
+M.grep_with_cache = function()
+  local last_grep_cache_index = nil
 
-M.search_with_cache = function()
-  if last_search == nil then
+  local cached_pickers = telescope_state.get_global_key "cached_pickers" or {}
+  for index,picker in ipairs(cached_pickers) do
+    if string.find(picker.prompt_title, 'Grep') then
+      picker.initial_mode = 'normal'
+      last_grep_cache_index = index
+    end
+  end
+
+  if last_grep_cache_index == nil then
     telescope.extensions.live_grep_args.live_grep_args()
-
-    local cached_pickers = telescope_state.get_global_key "cached_pickers" or {}
-    last_search = cached_pickers[1]
   else
-    telescope_builtin.resume({ picker = last_search })
+    telescope_builtin.resume({ cache_index = last_grep_cache_index })
   end
 end
 
