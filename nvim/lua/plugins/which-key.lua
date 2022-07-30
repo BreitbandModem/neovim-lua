@@ -31,6 +31,7 @@ local normal_leader_mappings = {
     d = {":lua require'dap'.disconnect()<cr>", "Detach"},
     e = {":lua require'dapui'.eval()<cr>", "Eval"},
     i = {":lua require'dap'.step_into()<cr>", "Step Into"},
+    l = {":lua require'dap'.run_to_cursor()<cr>", "Run to Cursor"},
     o = {":lua require'dap'.step_over()<cr>", "Step Over"},
     t = {":lua require'dap'.step_out()<cr>", "Step Out"},
     v = {":lua require'dapui'.toggle()<cr>", "View"},
