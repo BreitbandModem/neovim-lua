@@ -103,13 +103,13 @@ end
 -- other plugin before putting this into your config.
 vim.api.nvim_set_keymap(
   'i', '<Tab>',
-  'pumvisible() ? "<C-n>" : v:lua.check_backspace() ? "<Tab>" : coc#refresh()',
+  'pumvisible() ? coc#pum#next(1) : v:lua.check_backspace() ? "<Tab>" : coc#refresh()',
   { noremap=true, expr=true }
 )
 
 vim.api.nvim_set_keymap(
   'i', '<S-Tab>',
-  'pumvisible() ? "<C-p>" : "<C-h>"',
+  'pumvisible() ? coc#pum#prev(1) : "<S-Tab>"',
   { noremap=true, expr=true }
 )
 
@@ -123,7 +123,7 @@ check_backspace = function()
 end
 
 -- Use <c-space> to trigger completion.
-vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap=true, expr=true })
+-- vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap=true, expr=true })
 
 -- Make <CR> auto-select the first completion item and notify coc.nvim to
 -- format on enter, <cr> could be remapped by other vim plugin
