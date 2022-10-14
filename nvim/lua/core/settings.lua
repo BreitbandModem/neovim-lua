@@ -41,7 +41,8 @@ opt.linebreak = true                  -- Wrap on word boundary
 opt.termguicolors = true              -- Enable 24-bit RGB colors
 opt.cmdheight = 2                     -- Give more space for displaying messages
 opt.signcolumn = 'number'             -- Recently vim can merge signcolumn and number column into one
-opt.laststatus = 3                  -- Use global / single status line
+opt.laststatus = 3                    -- Use global / single status line
+opt.cmdheight = 0                     -- hide the command line when not in use
 
 -----------------------------------------------------------
 -- Tabs, indent
