@@ -1,5 +1,4 @@
 ## TODO:
-- install treesitter
 - eslint plugin
 - install autopairs plugin
 - scroll up/down: center cursor (c-u, c-d)
@@ -7,6 +6,7 @@
 - install telescope-frecency
 - explore LuaSnip plugin
 - refactor lua autocommands
+- explore nvim-dap-virtual-text plugin
 
 <p align="center">
 <img src="img/logo.png" alt="neovim-lua_logo">
@@ -63,6 +63,8 @@ Neovim KISS configuration with Lua
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Tool
 
 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter language parser
+
+[nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show function context
 
 ## Directory Tree of Lua Files
 
