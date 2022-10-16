@@ -15,6 +15,8 @@ require('core/colors')
 -- If not in vscode, import Lua modules
 if vim.g.vscode == nil then
   require('packer_init')
+  require('plugins/nvim-lsp')
+  require('plugins/nvim-cmp')
   require('plugins/nvim-tree')
   require('plugins/yanky')
   require('plugins/nvim-telescope')

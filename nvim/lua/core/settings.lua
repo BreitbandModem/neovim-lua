@@ -95,45 +95,6 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 -----------------------------------------------------------
--- COC
------------------------------------------------------------
-
--- Use tab for trigger completion with characters ahead and navigate.
--- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
--- other plugin before putting this into your config.
-vim.api.nvim_set_keymap(
-  'i', '<Tab>',
-  'pumvisible() ? coc#pum#next(1) : v:lua.check_backspace() ? "<Tab>" : coc#refresh()',
-  { noremap=true, expr=true }
-)
-
-vim.api.nvim_set_keymap(
-  'i', '<S-Tab>',
-  'pumvisible() ? coc#pum#prev(1) : "<S-Tab>"',
-  { noremap=true, expr=true }
-)
-
-check_backspace = function()
-  local col = vim.fn.col('.') - 1
-  if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-    return true
-  else
-    return false
-  end
-end
-
--- Use <c-space> to trigger completion.
--- vim.api.nvim_set_keymap('i', '<c-space>', 'coc#refresh()', { noremap=true, expr=true })
-
--- Make <CR> auto-select the first completion item and notify coc.nvim to
--- format on enter, <cr> could be remapped by other vim plugin
-vim.api.nvim_set_keymap(
-  'i', '<CR>',
-  'pumvisible() ? coc#_select_confirm() : "<C-g>u<CR><c-r>=coc#on_enter()<CR>"',
-  { noremap=true, expr=true }
-)
-
------------------------------------------------------------
 -- Autocommands
 -----------------------------------------------------------
 
@@ -174,27 +135,4 @@ cmd [[
     autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
     autocmd TermOpen * startinsert
     autocmd BufLeave term://* stopinsert
-]]
-
--- Highlight the symbol and its references when holding the cursor.
-cmd [[
-  autocmd CursorHold * silent call CocActionAsync('highlight')
-]]
-
--- changing coc highlight color cause light grey is invisible
--- BUT is overwritten by scheme so defining it in an autocmd after colorscheme
--- change. Find colors using :highlight
--- cterm=reverse guifg=#1f2329 guibg=#cc9057 guisp=none
-cmd [[
-  autocmd ColorScheme * highlight CocHighlightText ctermbg=15 guifg=none guibg=#535965 guisp=none
-]]
-
-cmd [[
-  augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  augroup end
 ]]

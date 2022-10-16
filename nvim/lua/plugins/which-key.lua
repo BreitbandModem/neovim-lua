@@ -22,7 +22,8 @@ local normal_leader_mappings = {
   ["+"] = {":vertical resize +5<CR>", "Vertical Grow"},
   ["-"] = {":vertical resize -5<CR>", "Vertical Shrink"},
   ["/"] = { ":lua require('Comment.api').toggle_current_linewise()<CR>", "Comment Line" },
-  a = {"<Plug>(coc-codeaction-selected)<cr>", "Code Action"},
+  a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+  e = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Code Action" },
   c = {":nohl<CR>", "Clear Highlighting"},
   d = {
     name = "Debug",
@@ -70,8 +71,8 @@ local normal_leader_mappings = {
   },
   r = {
     name = "Rename/Format",
-    f = { "<Plug>(coc-format-selected)<cr>", "Format Code" },
-    n = { "<Plug>(coc-rename)", "Rename Symbol" },
+    f = { "<cmd>lua vim.lsp.buf.format({async=true})<CR>", "Format Code" },
+    n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Format Code" },
   },
   t = {
     name = "Test",
@@ -101,12 +102,24 @@ local normal_g_opts = {
 }
 
 local normal_g_mappings = {
-  d = { "<Plug>(coc-definition)", "Definition" },
-  y = { "<Plug>(coc-type-definition)", " Type Definition" },
-  i = { "<Plug>(coc-implementation)", "Implementation" },
-  r = { "<Plug>(coc-references)", "References" },
+  d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+  D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+  r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+  i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
 }
 
+local normal_opts = {
+  mode = "n",
+  buffer = nil,
+  silent = true,
+  noremap = true,
+  nowait = true,
+}
+
+local normal_mappings = {
+  K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Symbol Info" },
+  ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
+}
 
 local visual_leader_opts = {
   mode = "v", -- Visual mode
@@ -118,16 +131,13 @@ local visual_leader_opts = {
 }
 
 local visual_leader_mappings = {
-  a = {"<Plug>(coc-codeaction-selected)<cr>", "Code Action"},
   g = {
     name = "Git",
     s = { ":Gitsigns stage_hunk<CR>", "Stage Hunk" },
   },
-  r = {
-    f = { "<Plug>(coc-format-selected)<cr>", "Format Code" },
-  }
 }
 
 wk.register(normal_leader_mappings, normal_leader_opts)
 wk.register(visual_leader_mappings, visual_leader_opts)
 wk.register(normal_g_mappings, normal_g_opts)
+wk.register(normal_mappings, normal_opts)

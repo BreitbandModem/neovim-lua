@@ -1,3 +1,13 @@
+## TODO:
+- install treesitter
+- eslint plugin
+- install autopairs plugin
+- scroll up/down: center cursor (c-u, c-d)
+- install harpoon
+- install telescope-frecency
+- explore LuaSnip plugin
+- refactor lua autocommands
+
 <p align="center">
 <img src="img/logo.png" alt="neovim-lua_logo">
 </p>
@@ -38,15 +48,19 @@ Neovim KISS configuration with Lua
 
 [which-key](https://github.com/folke/which-key.nvim) - Display key bindings for commands
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) - Make your Vim/Neovim as smart as VSCode
-
 [nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim
 
-[nvim-dap](https://github.com/rcarriga/nvim-dap-ui) - Visual interface for the DAP plugin
+[nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) - Visual interface for the DAP plugin
 
 [yanky](https://github.com/gbprod/yanky.nvim) - Yank history
 
 [neovim-session-manager](https://github.com/Shatur/neovim-session-manager) - Session Manager
+
+[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Nvim LSP Config
+
+[nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - LSP Autocompletion
+
+[LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Tool
 
 ## Directory Tree of Lua Files
 
@@ -176,7 +190,14 @@ Configure the newly installed font in the terminal app (e.g. iterm2).
 
 Make sure that the debug adapter config in [dap.lua](nvim/lua/plugins/dap.lua) points to the path of the cloned vscode-node-debug2 repo.
 
-4. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
+4. Install LSP language servers
+
+```term
+npm install -g typescript typescript-language-server
+brew install lua-language-server
+```
+
+5. Install [packer.nvim](https://github.com/wbthomason/packer.nvim) for install and manage plugins:
 
 ```term
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -187,9 +208,6 @@ Open Neovim and run `:PackerSync` command.
 
 See: https://github.com/wbthomason/packer.nvim#quickstart
 
-5. Install coc extensions:
-
-```:CocInstall coc-css coc-eslint coc-highlight coc-html coc-json coc-lua coc-pairs coc-tsserver```
 
 6. Specific fix for running mocha tests on a docker container using the vim-test plugin
 
@@ -253,11 +271,6 @@ nvim /tmp/nvim-start.log
 ```
 
 See: `:help startuptime`
-
-## TODO
-
-* Improve "Autocommands" management
-* Improve LSP configuration
 
 ## Guides and resources
 

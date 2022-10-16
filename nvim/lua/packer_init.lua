@@ -87,7 +87,7 @@ return packer.startup(function()
   use 'folke/which-key.nvim'
 
   -- use coc for code completion
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'neoclide/coc.nvim', branch = 'release'}
 
   -- dap debugger
   use {'mfussenegger/nvim-dap'}
@@ -98,4 +98,15 @@ return packer.startup(function()
 
   -- session manager
   use 'Shatur/neovim-session-manager'
+
+  -- use nvim LSP
+  use 'neovim/nvim-lspconfig'
+
+  -- LSP autocompletion
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+
+  -- snippet support
+  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
 end)
