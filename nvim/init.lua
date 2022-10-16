@@ -30,4 +30,5 @@ if vim.g.vscode == nil then
   require('plugins/which-key')
   require('plugins/dap')
   require('plugins/neovim-session-manager')
+  require('plugins/nvim-treesitter')
 end

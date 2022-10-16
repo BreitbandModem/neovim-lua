@@ -62,6 +62,8 @@ Neovim KISS configuration with Lua
 
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Tool
 
+[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter language parser
+
 ## Directory Tree of Lua Files
 
 `${HOME}/.config/nvim`
@@ -208,8 +210,13 @@ Open Neovim and run `:PackerSync` command.
 
 See: https://github.com/wbthomason/packer.nvim#quickstart
 
+6. Install treesitter language parsers
 
-6. Specific fix for running mocha tests on a docker container using the vim-test plugin
+```term
+:TSInstall typescript javascript gitignore regex css json vim lua markdown_inline http vue yaml
+```
+
+7. Specific fix for running mocha tests on a docker container using the vim-test plugin
 
 Remove the additional arguments added by the vim-test mocha plugin source code:
 

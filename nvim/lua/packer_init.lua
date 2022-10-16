@@ -63,13 +63,13 @@ return packer.startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      {'nvim-lua/plenary.nvim'},
-      {"nvim-telescope/telescope-live-grep-args.nvim"},
+      { 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
     }
   }
 
   -- Use telescope for vim ui.select
-  use {'nvim-telescope/telescope-ui-select.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
 
   -- numToStr/Comment.nvim to comment code
   use 'numToStr/Comment.nvim'
@@ -90,11 +90,11 @@ return packer.startup(function()
   -- use {'neoclide/coc.nvim', branch = 'release'}
 
   -- dap debugger
-  use {'mfussenegger/nvim-dap'}
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { 'mfussenegger/nvim-dap' }
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
   -- yank history
-  use({'gbprod/yanky.nvim'})
+  use({ 'gbprod/yanky.nvim' })
 
   -- session manager
   use 'Shatur/neovim-session-manager'
@@ -109,4 +109,10 @@ return packer.startup(function()
   -- snippet support
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+  -- Treesitter language parser
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 end)

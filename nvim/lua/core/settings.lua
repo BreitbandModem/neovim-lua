@@ -24,14 +24,13 @@ opt.swapfile = false                  -- Don't use swapfile
 opt.completeopt = 'menuone,noselect'  -- Autocomplete options
 opt.timeoutlen = 400                  -- Timeout before which-key is activated
 opt.ssop:remove('options')            -- do not store global and local values in a session
-opt.ssop:remove('folds')              -- do not store folds
+-- opt.ssop:remove('folds')              -- do not store folds
 
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true                     -- Show line number
 opt.showmatch = true                  -- Highlight matching parenthesis
-opt.foldmethod = 'marker'             -- Enable folding (default 'foldmarker')
 opt.colorcolumn = '80'                -- Line lenght marker at 80 columns
 opt.splitright = true                 -- Vertical split to the right
 opt.splitbelow = true                 -- Orizontal split to the bottom
@@ -45,12 +44,14 @@ opt.laststatus = 3                    -- Use global / single status line
 opt.cmdheight = 0                     -- hide the command line when not in use
 
 -----------------------------------------------------------
--- Tabs, indent
+-- Tabs, indent, folds
 -----------------------------------------------------------
 opt.expandtab = true                  -- Use spaces instead of tabs
 opt.shiftwidth = 2                    -- Shift 4 spaces when tab
 opt.tabstop = 2                       -- 1 tab == 4 spaces
 opt.smartindent = true                -- Autoindent new lines
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -----------------------------------------------------------
 -- Memory, CPU
