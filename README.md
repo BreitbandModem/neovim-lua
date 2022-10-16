@@ -1,5 +1,4 @@
 ## TODO:
-- scroll up/down: center cursor (c-u, c-d)
 - install harpoon
 - install telescope-frecency
 - explore LuaSnip plugin
