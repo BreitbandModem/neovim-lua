@@ -139,3 +139,8 @@ cmd [[
     autocmd TermOpen * startinsert
     autocmd BufLeave term://* stopinsert
 ]]
+
+-- Eslint on save
+cmd [[
+  autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
+]]

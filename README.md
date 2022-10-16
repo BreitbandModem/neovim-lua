@@ -200,6 +200,7 @@ Make sure that the debug adapter config in [dap.lua](nvim/lua/plugins/dap.lua) p
 
 ```term
 npm install -g typescript typescript-language-server
+npm i -g vscode-langservers-extracted
 brew install lua-language-server
 ```
 
