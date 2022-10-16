@@ -118,4 +118,6 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter-context'
 
   use 'windwp/nvim-autopairs'
+
+  use 'jose-elias-alvarez/null-ls.nvim'
 end)

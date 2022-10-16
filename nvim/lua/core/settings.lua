@@ -50,8 +50,9 @@ opt.expandtab = true                  -- Use spaces instead of tabs
 opt.shiftwidth = 2                    -- Shift 4 spaces when tab
 opt.tabstop = 2                       -- 1 tab == 4 spaces
 opt.smartindent = true                -- Autoindent new lines
-opt.foldmethod = "expr"
+opt.foldmethod = "expr"               -- Get folds from treesitter
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevelstart = 99               -- all folds open by default
 
 -----------------------------------------------------------
 -- Memory, CPU

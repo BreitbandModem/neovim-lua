@@ -1,11 +1,11 @@
 ## TODO:
-- eslint plugin
 - scroll up/down: center cursor (c-u, c-d)
 - install harpoon
 - install telescope-frecency
 - explore LuaSnip plugin
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
+- eslint plugin (null-ls eslint command takes forever)
 
 <p align="center">
 <img src="img/logo.png" alt="neovim-lua_logo">
@@ -66,6 +66,8 @@ Neovim KISS configuration with Lua
 [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show function context
 
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto pairs plugin
+
+[null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - Plugins for LSP; e.g. eslint
 
 ## Directory Tree of Lua Files
 
