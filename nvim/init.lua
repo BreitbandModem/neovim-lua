@@ -31,4 +31,5 @@ if vim.g.vscode == nil then
   require('plugins/dap')
   require('plugins/neovim-session-manager')
   require('plugins/nvim-treesitter')
+  require('plugins/nvim-autopairs')
 end

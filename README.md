@@ -1,6 +1,5 @@
 ## TODO:
 - eslint plugin
-- install autopairs plugin
 - scroll up/down: center cursor (c-u, c-d)
 - install harpoon
 - install telescope-frecency
@@ -65,6 +64,8 @@ Neovim KISS configuration with Lua
 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter language parser
 
 [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show function context
+
+[nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto pairs plugin
 
 ## Directory Tree of Lua Files
 

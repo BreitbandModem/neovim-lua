@@ -116,4 +116,6 @@ return packer.startup(function()
     run = ':TSUpdate'
   }
   use 'nvim-treesitter/nvim-treesitter-context'
+
+  use 'windwp/nvim-autopairs'
 end)
