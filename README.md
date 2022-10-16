@@ -5,6 +5,7 @@
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
 - eslint plugin (null-ls eslint command takes forever)
+- fix vista
 
 <p align="center">
 <img src="img/logo.png" alt="neovim-lua_logo">
