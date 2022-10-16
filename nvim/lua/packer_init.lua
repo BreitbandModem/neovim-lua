@@ -25,9 +25,6 @@ return packer.startup(function()
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Tag viewer
-  use 'liuchengxu/vista.vim'
-
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
 
@@ -118,6 +115,4 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter-context'
 
   use 'windwp/nvim-autopairs'
-
-  use 'jose-elias-alvarez/null-ls.nvim'
 end)

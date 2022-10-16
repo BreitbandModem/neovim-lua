@@ -23,7 +23,6 @@ if vim.g.vscode == nil then
   require('plugins/comment')
   require('plugins/indent-blankline')
   require('plugins/feline')
-  require('plugins/vista')
   require('plugins/alpha-nvim')
   require('plugins/glow')
   require('plugins/vim-test')
@@ -32,5 +31,4 @@ if vim.g.vscode == nil then
   require('plugins/neovim-session-manager')
   require('plugins/nvim-treesitter')
   require('plugins/nvim-autopairs')
-  require('plugins/null-ls')
 end

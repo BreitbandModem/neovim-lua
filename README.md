@@ -27,8 +27,6 @@ Neovim KISS configuration with Lua
 
 [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - A Lua fork of vim-devicons
 
-[vista.vim](https://github.com/liuchengxu/vista.vim) - View and search LSP symbols, tags in Vim/NeoVim
-
 [nvim-telescope](https://github.com/nvim-telescope/telescope.nvim) - A fuzzy finder
 
 [telescope-ui-select](https://github.com/nvim-telescope/telescope-ui-select.nvim) - Use telescope for vim ui.select
@@ -66,8 +64,6 @@ Neovim KISS configuration with Lua
 [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show function context
 
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto pairs plugin
-
-[null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - Plugins for LSP; e.g. eslint
 
 ## Directory Tree of Lua Files
 
