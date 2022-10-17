@@ -14,12 +14,26 @@ telescope.setup({
     find_files = {
       hidden = true
     },
-  }
+  },
+  extensions = {
+    frecency = {
+      show_scores = true,
+      show_unindexed = true,
+      ignore_patterns = {"*.git/*", "*/tmp/*"},
+      disable_devicons = false,
+      workspaces = {
+        ["server"]    = "./server",
+        ["client"]    = "./client",
+        ["migrations"] = "./db/knex/migrations",
+      }
+    }
+  },
 })
 
 telescope.load_extension("live_grep_args")
 telescope.load_extension("yank_history")
 telescope.load_extension("ui-select")
+telescope.load_extension("frecency")
 
 local M = {}
 

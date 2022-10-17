@@ -1,10 +1,8 @@
 ## TODO:
 - install harpoon
-- install telescope-frecency
 - explore LuaSnip plugin
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
-- eslint plugin (null-ls eslint command takes forever)
 - fix vista
 
 <p align="center">
@@ -64,6 +62,8 @@ Neovim KISS configuration with Lua
 [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) - Show function context
 
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto pairs plugin
+
+[telescope-frecency](https://github.com/nvim-telescope/telescope-frecency.nvim) - Index frecent files with telescope
 
 ## Directory Tree of Lua Files
 

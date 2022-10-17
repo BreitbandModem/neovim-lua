@@ -115,4 +115,9 @@ return packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter-context'
 
   use 'windwp/nvim-autopairs'
+
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = {"kkharji/sqlite.lua"}
+  }
 end)
