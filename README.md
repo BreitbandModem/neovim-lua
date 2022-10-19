@@ -1,9 +1,9 @@
 ## TODO:
-- install harpoon
 - explore LuaSnip plugin
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
 - fix vista
+- explore vim-test alternatives
 
 <p align="center">
 <img src="img/logo.png" alt="neovim-lua_logo">
@@ -64,6 +64,8 @@ Neovim KISS configuration with Lua
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Auto pairs plugin
 
 [telescope-frecency](https://github.com/nvim-telescope/telescope-frecency.nvim) - Index frecent files with telescope
+
+[harpoon](https://github.com/ThePrimeagen/harpoon) - Quick access to bookmarked files
 
 ## Directory Tree of Lua Files
 

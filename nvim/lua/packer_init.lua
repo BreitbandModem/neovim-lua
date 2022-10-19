@@ -68,6 +68,12 @@ return packer.startup(function()
   -- Use telescope for vim ui.select
   use { 'nvim-telescope/telescope-ui-select.nvim' }
 
+  -- index frecently used files
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = {"kkharji/sqlite.lua"}
+  }
+
   -- numToStr/Comment.nvim to comment code
   use 'numToStr/Comment.nvim'
 
@@ -114,10 +120,9 @@ return packer.startup(function()
   }
   use 'nvim-treesitter/nvim-treesitter-context'
 
+  -- automatically adds closing parenthesis
   use 'windwp/nvim-autopairs'
 
-  use {
-    "nvim-telescope/telescope-frecency.nvim",
-    requires = {"kkharji/sqlite.lua"}
-  }
+  -- harpoon allows to set quick access bookmarks
+  use 'ThePrimeagen/harpoon'
 end)

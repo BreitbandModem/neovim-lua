@@ -22,6 +22,10 @@ local normal_leader_mappings = {
   ["+"] = {":vertical resize +5<CR>", "Vertical Grow"},
   ["-"] = {":vertical resize -5<CR>", "Vertical Shrink"},
   ["/"] = { ":lua require('Comment.api').toggle_current_linewise()<CR>", "Comment Line" },
+  ["1"] = {":lua require('harpoon.ui').nav_file(1)<CR>", "Harpoon file 1"},
+  ["2"] = {":lua require('harpoon.ui').nav_file(2)<CR>", "Harpoon file 2"},
+  ["3"] = {":lua require('harpoon.ui').nav_file(3)<CR>", "Harpoon file 3"},
+  ["4"] = {":lua require('harpoon.ui').nav_file(4)<CR>", "Harpoon file 4"},
   a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
   e = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Code Action" },
   c = {":nohl<CR>", "Clear Highlighting"},
@@ -69,9 +73,17 @@ local normal_leader_mappings = {
     N = {":Gitsigns prev_hunk<CR>", "Previous Hunk"},
     d = {":Gitsigns diffthis<CR>", "Diff"},
   },
+  h = {
+    name = "Harpoon",
+    a = {":lua require('harpoon.mark').add_file()<CR>", "Add file to Harpoon"},
+    h = {":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon UI"},
+    n = {":lua require('harpoon.ui').nav_next()<CR>", "Next file"},
+    p = {":lua require('harpoon.ui').nav_prev()<CR>", "Previous file"},
+  },
   r = {
     name = "Rename/Format",
-    f = { "<cmd>lua vim.lsp.buf.format({async=true})<CR>", "Format Code" },
+    -- f = { "<cmd>lua vim.lsp.buf.format({name=eslint, async=true})<CR>", "Format Code" },
+    f = { ":EslintFixAll<CR>", "Format Code" },
     n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Format Code" },
   },
   t = {
@@ -118,7 +130,8 @@ local normal_opts = {
 
 local normal_mappings = {
   K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Symbol Info" },
-  ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
+  -- <c-k> conflicts with the split window navigation (window up). As signature_help doesn't seem useful for now, I disable it
+  -- ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
 }
 
 local visual_leader_opts = {
