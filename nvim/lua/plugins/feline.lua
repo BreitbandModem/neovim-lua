@@ -44,6 +44,12 @@ end
 
 -- My components
 local comps = {
+  time = {
+    provider = function ()
+      return os.date("%H:%M")
+    end,
+    hl = { fg = colors.cyan },
+  },
   -- vi_mode -> NORMAL, INSERT..
   vi_mode = {
     left = {
@@ -213,10 +219,12 @@ local components = {
 
 table.insert(components.active, {})
 table.insert(components.active, {})
+table.insert(components.active, {})
+table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 table.insert(components.inactive, {})
 
--- Right section
+-- Left section
 table.insert(components.active[1], comps.vi_mode.left)
 table.insert(components.active[1], comps.file.info)
 table.insert(components.active[1], comps.git.branch)
@@ -225,16 +233,20 @@ table.insert(components.active[1], comps.git.change)
 table.insert(components.active[1], comps.git.remove)
 table.insert(components.inactive[1], comps.file.info)
 
--- Left Section
-table.insert(components.active[2], comps.diagnos.err)
-table.insert(components.active[2], comps.diagnos.warn)
-table.insert(components.active[2], comps.diagnos.hint)
-table.insert(components.active[2], comps.diagnos.info)
-table.insert(components.active[2], comps.lsp.name)
-table.insert(components.active[2], comps.file.type)
-table.insert(components.active[2], comps.file.os)
-table.insert(components.active[2], comps.file.position)
-table.insert(components.active[2], comps.file.line_percentage)
+-- Middle section
+table.insert(components.active[2], comps.time)
+table.insert(components.inactive[2], comps.time)
+
+-- Right Section
+table.insert(components.active[3], comps.diagnos.err)
+table.insert(components.active[3], comps.diagnos.warn)
+table.insert(components.active[3], comps.diagnos.hint)
+table.insert(components.active[3], comps.diagnos.info)
+-- table.insert(components.active[3], comps.lsp.name)
+table.insert(components.active[3], comps.file.type)
+-- table.insert(components.active[3], comps.file.os)
+table.insert(components.active[3], comps.file.position)
+table.insert(components.active[3], comps.file.line_percentage)
 
 -- Call feline
 require('feline').setup {
