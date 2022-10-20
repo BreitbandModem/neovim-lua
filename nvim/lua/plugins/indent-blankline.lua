@@ -4,17 +4,19 @@
 
 -- Plugin: indent-blankline
 -- url: https://github.com/lukas-reineke/indent-blankline.nvim
-
+vim.opt.list = true
+-- vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 
 require('indent_blankline').setup {
   enabled = true,
-  use_treesitter = false,
-  char = "▏",
+  show_current_context = true,
+  use_treesitter = true,
+  show_current_context_start = true,
+  show_end_of_line = true,
+  -- char = "▏",
   -- context_char = '┃',
   space_char_blankline = " ",
-  show_first_indent_level = false,
-  show_current_context = false,
-  show_current_context_start = false,
   filetype_exclude = {
     'help',
     'git',
