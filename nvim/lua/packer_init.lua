@@ -125,4 +125,7 @@ return packer.startup(function()
 
   -- harpoon allows to set quick access bookmarks
   use 'ThePrimeagen/harpoon'
+
+  -- file overview in sidebar
+  use 'preservim/tagbar'
 end)

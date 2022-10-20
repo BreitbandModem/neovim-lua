@@ -80,6 +80,7 @@ local normal_leader_mappings = {
     n = {":lua require('harpoon.ui').nav_next()<CR>", "Next file"},
     p = {":lua require('harpoon.ui').nav_prev()<CR>", "Previous file"},
   },
+  m = { ":TagbarOpen j<cr>", "Tagbar" },
   r = {
     name = "Rename/Format",
     -- f = { "<cmd>lua vim.lsp.buf.format({name=eslint, async=true})<CR>", "Format Code" },
@@ -101,7 +102,6 @@ local normal_leader_mappings = {
       v = { ":TestVisit --inspect=0.0.0.0:9228 | lua require'dap'.run(vim.g.dap_test_configuration)<cr>", "Visit" },
     },
   },
-  v = { ":Vista!!<cr>", "Vista" },
 }
 
 local normal_g_opts = {

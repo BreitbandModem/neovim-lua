@@ -51,4 +51,4 @@ map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 
 -- Vista tag-viewer
-map('n', '<C-m>', ':Vista!!<CR>') -- open/close
+map('n', '<C-m>', ':TagbarToggle<CR>') -- open/close

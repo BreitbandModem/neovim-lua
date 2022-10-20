@@ -2,7 +2,6 @@
 - explore LuaSnip plugin
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
-- fix vista
 - explore vim-test alternatives
 
 <p align="center">
@@ -66,6 +65,8 @@ Neovim KISS configuration with Lua
 [telescope-frecency](https://github.com/nvim-telescope/telescope-frecency.nvim) - Index frecent files with telescope
 
 [harpoon](https://github.com/ThePrimeagen/harpoon) - Quick access to bookmarked files
+
+[Tagbar](https://github.com/preservim/tagbar) - Tagbar to show file overview in sidebar
 
 ## Directory Tree of Lua Files
 
@@ -189,6 +190,9 @@ NODE_OPTIONS=--no-experimental-fetch npm run build
 # Install a custom font to support icons
 brew tap homebrew/cask-fonts
 brew install font-jetbrains-mono-nerd-font
+
+# Install universal ctags for the Tagbar plugin
+brew install universal-ctags
 ```
 
 Configure the newly installed font in the terminal app (e.g. iterm2).
