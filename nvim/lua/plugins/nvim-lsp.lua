@@ -16,11 +16,11 @@ vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 local on_attach = function(client, bufnr)
   -- highlight symbol under cursor
   if client.server_capabilities.documentHighlightProvider then
-    vim.cmd [[
+    --[[ vim.cmd [[
       hi! LspReferenceRead cterm=bold ctermbg=red guibg=#4f4f4f
       hi! LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
       hi! LspReferenceWrite cterm=bold ctermbg=red guibg=#707070
-    ]]
+    ]] --]]
     vim.api.nvim_create_augroup('lsp_document_highlight', {
       clear = false
     })
