@@ -1,5 +1,4 @@
 ## TODO:
-- explore LuaSnip plugin
 - refactor lua autocommands
 - explore nvim-dap-virtual-text plugin
 - explore vim-test alternatives
@@ -55,6 +54,8 @@ Neovim KISS configuration with Lua
 [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - LSP Autocompletion
 
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Tool
+
+[friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Snippet collection
 
 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter language parser
 
