@@ -21,11 +21,13 @@ telescope.setup({
       show_unindexed = true,
       ignore_patterns = {"*.git/*", "*/tmp/*"},
       disable_devicons = false,
+      default_workspace = "CWD",
       workspaces = {
         ["server"]    = "./server",
         ["client"]    = "./client",
         ["migrations"] = "./db/knex/migrations",
-      }
+      },
+      show_filter_column = true,
     }
   },
 })
