@@ -11,6 +11,7 @@
 -----------------------------------------------------------
 local cmd = vim.cmd     				      -- Execute Vim commands
 local exec = vim.api.nvim_exec 	      -- Execute Vimscript
+local autocmd = vim.api.nvim_create_autocmd  -- Nvim autocommand api
 local g = vim.g         				      -- Global variables
 local opt = vim.opt         		      -- Set options (global/buffer/windows-scoped)
 --local fn = vim.fn       				    -- Call Vim functions
@@ -30,7 +31,8 @@ opt.ssop:remove('options')            -- do not store global and local values in
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
-opt.number = true                     -- Show line number
+opt.relativenumber = true             -- Show relative line numbers
+opt.number = true                     -- Show current line number
 opt.showmatch = true                  -- Highlight matching parenthesis
 opt.colorcolumn = '80'                -- Line lenght marker at 80 columns
 opt.splitright = true                 -- Vertical split to the right
@@ -144,3 +146,13 @@ cmd [[
 cmd [[
   autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
 ]]
+
+-- Dynamic line numbers
+autocmd({"BufEnter", "FocusGained", "WinEnter"}, {
+  desc = "use absolute line numbers on unfocused buffer",
+  command = "if &nu | set rnu   | endif",
+})
+autocmd({"BufLeave", "FocusLost", "WinLeave"}, {
+  desc = "use relative line numbers on focused buffer",
+  command = "if &nu | set nornu | endif",
+})
