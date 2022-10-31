@@ -34,7 +34,7 @@ opt.ssop:remove('options')            -- do not store global and local values in
 opt.relativenumber = true             -- Show relative line numbers
 opt.number = true                     -- Show current line number
 opt.showmatch = true                  -- Highlight matching parenthesis
-opt.colorcolumn = '80'                -- Line lenght marker at 80 columns
+opt.colorcolumn = '120'                -- Line lenght marker at 80 columns
 opt.splitright = true                 -- Vertical split to the right
 opt.splitbelow = true                 -- Orizontal split to the bottom
 opt.ignorecase = true                 -- Ignore case letters when search
