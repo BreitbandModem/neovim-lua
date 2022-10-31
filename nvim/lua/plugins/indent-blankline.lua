@@ -14,7 +14,7 @@ require('indent_blankline').setup {
   use_treesitter = true,
   show_current_context_start = true,
   show_end_of_line = true,
-  -- char = "▏",
+  char = "▏",
   -- context_char = '┃',
   space_char_blankline = " ",
   filetype_exclude = {
