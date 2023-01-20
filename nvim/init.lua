@@ -32,4 +32,5 @@ if vim.g.vscode == nil then
   require('plugins/nvim-treesitter')
   require('plugins/nvim-autopairs')
   require('plugins/tagbar')
+  require('plugins/no-neck-pain')
 end
