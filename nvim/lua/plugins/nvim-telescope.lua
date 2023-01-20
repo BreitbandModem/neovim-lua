@@ -21,7 +21,7 @@ telescope.setup({
       show_unindexed = true,
       ignore_patterns = {"*.git/*", "*/tmp/*"},
       disable_devicons = false,
-      default_workspace = "CWD",
+      -- default_workspace = "CWD",
       workspaces = {
         ["server"]    = "./server",
         ["client"]    = "./client",
