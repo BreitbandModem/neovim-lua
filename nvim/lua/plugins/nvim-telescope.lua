@@ -1,62 +1,48 @@
-local telescope = require('telescope')
-local telescope_builtin = require('telescope.builtin')
-local telescope_state = require('telescope.state')
-local telescope_previewers = require("telescope.previewers")
-
-telescope.setup({
-	defaults = {
-		file_previewer = telescope_previewers.vim_buffer_cat.new,
-		grep_previewer = telescope_previewers.vim_buffer_vimgrep.new,
-		qflist_previewer = telescope_previewers.vim_buffer_qflist.new,
-    cache_picker = { num_pickers = 5 },
+return {
+  'nvim-telescope/telescope-ui-select.nvim',
+  'gbrlsnchs/telescope-lsp-handlers.nvim',
+  {
+    'danielfalk/smart-open.nvim',
+    branch = '0.1.x',
+    config = function()
+      require'telescope'.load_extension('smart_open')
+    end,
+    dependencies = {'kkharji/sqlite.lua'}
   },
-  pickers = {
-    find_files = {
-      hidden = true
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
-  },
-  extensions = {
-    lsp_handlers = {
-      code_action = {
-        telescope = require('telescope.themes').get_dropdown({}),
-      },
-    },
-  },
-})
+    config = function ()
+      local telescope_previewers = require("telescope.previewers")
+      local telescope = require('telescope')
+      telescope.setup({
+        defaults = {
+          file_previewer = telescope_previewers.vim_buffer_cat.new,
+          grep_previewer = telescope_previewers.vim_buffer_vimgrep.new,
+          qflist_previewer = telescope_previewers.vim_buffer_qflist.new,
+          cache_picker = { num_pickers = 5 },
+        },
+        pickers = {
+          find_files = {
+            hidden = true
+          },
+        },
+        extensions = {
+          lsp_handlers = {
+            code_action = {
+              telescope = require('telescope.themes').get_dropdown({}),
+            },
+          },
+        },
+      })
 
-telescope.load_extension("live_grep_args")
-telescope.load_extension("yank_history")
-telescope.load_extension("ui-select")
-telescope.load_extension("lsp_handlers")
-
-local M = {}
-
-M.grep_with_cache = function()
-  local last_grep_cache_index = nil
-
-  local cached_pickers = telescope_state.get_global_key "cached_pickers" or {}
-  for index,picker in ipairs(cached_pickers) do
-    if string.find(picker.prompt_title, 'Grep') then
-      picker.initial_mode = 'normal'
-      last_grep_cache_index = index
+      telescope.load_extension("live_grep_args")
+      telescope.load_extension("yank_history")
+      telescope.load_extension("ui-select")
+      telescope.load_extension("lsp_handlers")
     end
-  end
-
-  if last_grep_cache_index == nil then
-    telescope.extensions.live_grep_args.live_grep_args()
-  else
-    telescope_builtin.resume({ cache_index = last_grep_cache_index })
-  end
-end
-
--- picker for dotfiles (nvim configs)
-
-M.search_dotfiles = function()
-  telescope_builtin.find_files({
-    prompt_title = "< VimRC >",
-    cwd = "~/.config/nvim",
-    hidden = true,
-  })
-end
-
-return M
+  },
+}

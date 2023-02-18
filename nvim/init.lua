@@ -1,38 +1,23 @@
---[[
-
-Neovim init file
-Version: 0.50.1 - 2022/03/15
-Maintainer: brainf+ck
-Website: https://github.com/brainfucksec/neovim-lua
-
---]]
+-- install lazy.nvim which is our package manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
 -- import general vim settings
 require('core/settings')
 require('core/keymaps')
-require('core/colors')
 
--- If not in vscode, import Lua modules
+-- If not in vscode, load plugins through lazy.nvim
 if vim.g.vscode == nil then
-  require('packer_init')
+  require('lazy').setup('plugins')
   require('plugins/nvim-lsp')
-  require('plugins/nvim-cmp')
-  require('plugins/nvim-tree')
-  require('plugins/yanky')
-  require('plugins/nvim-telescope')
-  require('plugins/comment')
-  require('plugins/indent-blankline')
-  require('plugins/feline')
-  require('plugins/alpha-nvim')
-  require('plugins/glow')
-  require('plugins/vim-test')
-  require('plugins/which-key')
-  require('plugins/dap')
-  require('plugins/neovim-session-manager')
-  require('plugins/nvim-treesitter')
-  require('plugins/nvim-autopairs')
-  require('plugins/tagbar')
-  require('plugins/no-neck-pain')
-  require('plugins/mind')
-  require('plugins/term-edit')
 end

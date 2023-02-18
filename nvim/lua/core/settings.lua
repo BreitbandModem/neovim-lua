@@ -27,6 +27,9 @@ opt.timeoutlen = 400                  -- Timeout before which-key is activated
 opt.scrolloff = 8                     -- min number of lines shown when scrolling
 opt.ssop:remove('options')            -- do not store global and local values in a session
 -- opt.ssop:remove('folds')              -- do not store folds
+opt.list = true
+opt.listchars:append "eol:↴"
+-- opt.listchars:append "space:⋅"
 
 -----------------------------------------------------------
 -- Neovim UI

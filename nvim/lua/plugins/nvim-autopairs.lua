@@ -1,3 +1,6 @@
-require("nvim-autopairs").setup {
-  check_ts = true,
+return {
+  'windwp/nvim-autopairs',
+  config = {
+    check_ts = true,
+  }
 }

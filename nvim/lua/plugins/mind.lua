@@ -1,11 +1,15 @@
-require('mind').setup({
-  persistence = {
-    state_path = "~/gdrive/mind.nvim/mind.json",
-    data_dir = "~/gdrive/mind.nvim/data",
+-- note taking
+return {
+  'phaazon/mind.nvim',
+  branch = 'v2.2',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  config = {
+    persistence = {
+      state_path = "~/gdrive/mind.nvim/mind.json",
+      data_dir = "~/gdrive/mind.nvim/data",
+    },
+    ui = {
+      default_icon = ' ',
+    },
   },
-  ui = {
-    default_icon = ' ',
-  },
-})
-    -- state_path = "/Volumes/GoogleDrive/My\\ Drive/mind.nvim/mind.json",
-    -- data_dir = "/Volumes/GoogleDrive/My\\ Drive/mind.nvim/data",
+}

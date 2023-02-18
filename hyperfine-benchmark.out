@@ -1,0 +1,9 @@
+# packer
+Benchmark 1: nvim --headless +qa
+  Time (mean ± σ):     326.8 ms ±  17.1 ms    [User: 201.7 ms, System: 126.5 ms]
+  Range (min … max):   309.9 ms … 371.4 ms    10 runs
+
+# lazy.nvim
+Benchmark 1: nvim --headless +qa
+  Time (mean ± σ):     184.8 ms ±   6.3 ms    [User: 117.6 ms, System: 67.5 ms]
+  Range (min … max):   175.5 ms … 195.1 ms    16 runs
