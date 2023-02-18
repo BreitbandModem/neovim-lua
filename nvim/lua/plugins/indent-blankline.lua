@@ -1,6 +1,6 @@
 return {
   'lukas-reineke/indent-blankline.nvim',
-  config = {
+  opts = {
     enabled = true,
     show_current_context = true,
     use_treesitter = true,

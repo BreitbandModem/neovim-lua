@@ -1,7 +1,6 @@
 return {
   'shortcuts/no-neck-pain.nvim', -- center buffers
-  version = '*',
-  config = {
+  opts = {
     enableOnVimEnter = true,
     buffers = {
       right = {

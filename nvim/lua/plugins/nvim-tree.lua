@@ -1,6 +1,6 @@
 return {
   'kyazdani42/nvim-tree.lua',
-  config = {
+  opts = {
     respect_buf_cwd = true,
     sync_root_with_cwd = true,
     filters = {

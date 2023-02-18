@@ -1,7 +1,6 @@
 return {
   'chomosuke/term-edit.nvim',
-  version = 'v1.*',
-  config = {
+  opts = {
       prompt_end = '✗ ',
   },
 }

@@ -1,7 +1,7 @@
 -- yank history
 return {
   'gbprod/yanky.nvim',
-  config = {
+  opts = {
     ring = {
       history_length = 10,
       storage = "shada",

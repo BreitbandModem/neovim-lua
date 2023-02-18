@@ -1,9 +1,7 @@
-
 -- picker for dotfiles (nvim configs)
-
 return {
   'mrjones2014/legendary.nvim',
-  config = {
+  opts = {
     keymaps = {
       { '<leader>ll', ':Legendary<CR>', description = 'Legendary' },
     },
