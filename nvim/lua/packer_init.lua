@@ -44,6 +44,7 @@ return packer.startup(function()
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup()
+      require("scrollbar.handlers.gitsigns").setup()
     end
   }
 
@@ -136,9 +137,22 @@ return packer.startup(function()
   }
 
   use { 'chomosuke/term-edit.nvim', tag = 'v1.*' }
+
+  use {
+    "petertriho/nvim-scrollbar",
     config = function()
+      require("scrollbar").setup()
     end
   }
+
+  use {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      -- require('hlslens').setup() is not required
+      require("scrollbar.handlers.search").setup()
+    end,
+  }
+
   use {
     "danielfalk/smart-open.nvim",
     branch = "0.1.x",
