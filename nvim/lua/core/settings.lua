@@ -22,7 +22,7 @@ local opt = vim.opt         		      -- Set options (global/buffer/windows-scoped
 opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.swapfile = false                  -- Don't use swapfile
-opt.completeopt = 'menuone,noselect'  -- Autocomplete options
+opt.completeopt = {'menu', 'menuone', 'noselect'}  -- Autocomplete options
 opt.timeoutlen = 400                  -- Timeout before which-key is activated
 opt.scrolloff = 8                     -- min number of lines shown when scrolling
 opt.ssop:remove('options')            -- do not store global and local values in a session
