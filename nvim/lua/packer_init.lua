@@ -65,11 +65,8 @@ return packer.startup(function()
   -- Use telescope for vim ui.select
   use { 'nvim-telescope/telescope-ui-select.nvim' }
 
-  -- index frecently used files
-  use {
-    "nvim-telescope/telescope-frecency.nvim",
-    requires = {"kkharji/sqlite.lua"}
-  }
+  -- use for LSP features
+  use 'gbrlsnchs/telescope-lsp-handlers.nvim'
 
   -- numToStr/Comment.nvim to comment code
   use 'numToStr/Comment.nvim'
@@ -142,4 +139,13 @@ return packer.startup(function()
     config = function()
     end
   }
+  use {
+    "danielfalk/smart-open.nvim",
+    branch = "0.1.x",
+    config = function()
+      require"telescope".load_extension("smart_open")
+    end,
+    requires = {"kkharji/sqlite.lua"}
+  }
+
 end)

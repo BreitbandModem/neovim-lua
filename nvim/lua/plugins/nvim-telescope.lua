@@ -16,26 +16,18 @@ telescope.setup({
     },
   },
   extensions = {
-    frecency = {
-      show_scores = true,
-      show_unindexed = true,
-      ignore_patterns = {"*.git/*", "*/tmp/*"},
-      disable_devicons = false,
-      -- default_workspace = "CWD",
-      workspaces = {
-        ["server"]    = "./server",
-        ["client"]    = "./client",
-        ["migrations"] = "./db/knex/migrations",
+    lsp_handlers = {
+      code_action = {
+        telescope = require('telescope.themes').get_dropdown({}),
       },
-      show_filter_column = true,
-    }
+    },
   },
 })
 
 telescope.load_extension("live_grep_args")
 telescope.load_extension("yank_history")
 telescope.load_extension("ui-select")
-telescope.load_extension("frecency")
+telescope.load_extension("lsp_handlers")
 
 local M = {}
 
