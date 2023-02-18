@@ -136,8 +136,10 @@ return packer.startup(function()
     'phaazon/mind.nvim',
     branch = 'v2.2',
     requires = { 'nvim-lua/plenary.nvim' },
+  }
+
+  use { 'chomosuke/term-edit.nvim', tag = 'v1.*' }
     config = function()
-      require'mind'.setup()
     end
   }
 end)

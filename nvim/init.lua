@@ -34,4 +34,5 @@ if vim.g.vscode == nil then
   require('plugins/tagbar')
   require('plugins/no-neck-pain')
   require('plugins/mind')
+  require('plugins/term-edit')
 end
