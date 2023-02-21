@@ -45,4 +45,8 @@ return {
       end,
     },
 
+    --[[ {
+      'liangxianzhe/floating-input.nvim',
+      config = true,
+    } ]]
   }
