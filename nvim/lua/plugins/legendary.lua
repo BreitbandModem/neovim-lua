@@ -30,18 +30,18 @@ return {
         end,
         description = 'Grep files through telescope with previous state cached',
       },
-    },
-    {
-      ':SearchDotFiles',
-      function ()
-        local telescope_builtin = require('telescope.builtin')
-        telescope_builtin.find_files({
-          prompt_title = "< VimRC >",
-          cwd = "~/.config/nvim",
-          hidden = true,
-        })
-      end,
-      description = 'Search NVIM dotfiles through telescope',
+      {
+        ':SearchDotFiles',
+        function ()
+          local telescope_builtin = require('telescope.builtin')
+          telescope_builtin.find_files({
+            prompt_title = "< VimRC >",
+            cwd = "~/.config/nvim",
+            hidden = true,
+          })
+        end,
+        description = 'Search NVIM dotfiles through telescope',
+      },
     },
     which_key = { auto_register = true },
   },
