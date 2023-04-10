@@ -25,7 +25,7 @@ return {
 
     -- Autocompletion keymaps (mini.complete)
     -- To use `<Tab>` and `<S-Tab>` for navigation through completion list
-    vim.api.nvim_setKeymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
+    vim.api.nvim_set_keymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
     vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
     -- To get more consistent behavior of `<CR>`
     local keys = {
