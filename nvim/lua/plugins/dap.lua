@@ -29,7 +29,7 @@ return {
             ['/app/*'] = "${workspaceFolder}/*"
           },
           skipFiles = {
-            "/app/node_modules/**/*.js",
+            "/app/server/node_modules/**/*.js",
             "<node_internals>/**/*.js"
           }
         },
@@ -51,7 +51,7 @@ return {
             ['/app/*'] = "${workspaceFolder}/*"
           },
           skipFiles = {
-            "/app/node_modules/**/*.js",
+            "/app/server/node_modules/**/*.js",
             "<node_internals>/**/*.js"
           }
         },
@@ -76,8 +76,11 @@ return {
             ['/app/*'] = "${workspaceFolder}/*"
           },
           skipFiles = {
-            "/app/node_modules/**/*.js",
-            "<node_internals>/**/*.js"
+            "/app/server/node_modules/**",
+            "<node_internals>/**",
+            "/app/server/<node_internals>/**",
+            "${workspaceFolder}/<node_internals>/**",
+            "${workspaceFolder}/node_modules/**"
           },
         }
     end
