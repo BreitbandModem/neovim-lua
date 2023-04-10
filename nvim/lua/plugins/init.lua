@@ -70,4 +70,9 @@ return {
           colorArg: never
           pager: delta --dark --paging=never
     ]]
+
+    {
+      'HiPhish/nvim-ts-rainbow2',
+      dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    },
   }
