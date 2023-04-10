@@ -132,6 +132,9 @@ cmd [[
 -- Terminal
 -----------------------------------------------------------
 
+vim.g.floaterm_width = 0.95
+vim.g.floaterm_height = 0.95
+
 -- Open a terminal pane on the right using :Term
 cmd [[command Term :botright vsplit term://$SHELL]]
 cmd [[command TabTerm :tabedit term://$SHELL]]

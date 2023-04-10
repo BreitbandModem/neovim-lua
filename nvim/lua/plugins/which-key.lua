@@ -71,6 +71,7 @@ return {
       },
       g = {
         name = "Git",
+        g = {":FloatermNew lazygit<CR>", "LazyGit"},
         p = {":Gitsigns preview_hunk<CR>", "Preview Hunk"},
         s = {":Gitsigns stage_hunk<CR>", "Stage Hunk" },
         S = {":Gitsigns stage_buffer<CR>", "Stage File"},
@@ -96,6 +97,7 @@ return {
         f = { ":EslintFixAll<CR>", "Format Code" },
         n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Format Code" },
       },
+      T = { ":FloatermToggle<CR>", "Terminal" },
       t = {
         name = "Test",
     --  f = { ":TestFile<cr>", "File" },

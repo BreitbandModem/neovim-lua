@@ -45,8 +45,29 @@ return {
       end,
     },
 
+    -- requires vim 0.9
     --[[ {
       'liangxianzhe/floating-input.nvim',
       config = true,
     } ]]
+
+    'voldikss/vim-floaterm',
+    -- I'm using floaterm with lazygit with the following conf:
+    --[[
+      os:
+        editCommand: 'floaterm'
+      keybinding:
+        universal:
+          return: 'q'
+      gui:
+        theme:
+          selectedLineBgColor:
+            - underline
+          selectedRangeBgColor:
+            - underline
+      git:
+        paging:
+          colorArg: never
+          pager: delta --dark --paging=never
+    ]]
   }
