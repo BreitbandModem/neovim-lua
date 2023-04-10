@@ -2,6 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    main = 'nvim-treesitter.configs',
     opts = {
       ensure_installed = {
         "help", "typescript", "javascript", "gitignore", "regex", "css", "json", "vim", "lua", "markdown_inline", "http", "vue", "yaml",
