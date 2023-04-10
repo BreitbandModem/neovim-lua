@@ -49,7 +49,4 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
 map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
---map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-
--- Vista tag-viewer
---map('n', '<C-m>', ':TagbarToggle<CR>') -- open/close
+map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close

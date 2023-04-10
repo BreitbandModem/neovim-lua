@@ -5,7 +5,7 @@ return {
     sync_root_with_cwd = true,
     filters = {
       dotfiles = true,
-      custom = { '.git', 'node_modules', '.cache', '.bin' },
+      custom = { 'node_modules', '.cache', '.bin' },
     },
   },
 }
