@@ -45,11 +45,10 @@ return {
       end,
     },
 
-    -- requires vim 0.9
-    --[[ {
+    {
       'liangxianzhe/floating-input.nvim',
       config = true,
-    } ]]
+    },
 
     'voldikss/vim-floaterm',
     -- I'm using floaterm with lazygit with the following conf:
