@@ -21,15 +21,7 @@ return {
       end
     },
 
-    {
-      'numToStr/Comment.nvim',
-      config = true,
-    },
-
-    'ellisonleao/glow.nvim', -- markdown preview
-
     'folke/zen-mode.nvim', -- focus current window
-
 
     'ThePrimeagen/harpoon', -- quickly set and access bookmarks
 

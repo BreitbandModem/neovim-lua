@@ -1,14 +1,31 @@
 -- Autocompletion plugins
 return {
-  'echasnovski/mini.nvim', version = '*',
+  'echasnovski/mini.nvim',
+  version = '*',
   config = function ()
-    require('')
-    require('mini.completion').setup({
-      "lsp_completion = {source_func = 'omnifunc', auto_setup = false}",
+    require('mini.ai').setup({
+      custom_textobjects = {
+        -- camel case
+        w = {
+          {
+            '%u[%l%d]+%f[^%l%d]',
+            '%f[%S][%l%d]+%f[^%l%d]',
+            '%f[%P][%l%d]+%f[^%l%d]',
+            '^[%l%d]+%f[^%l%d]',
+          },
+          '^().*()$'
+        }
+      }
     })
+    require('mini.comment').setup()
+    require('mini.surround').setup()
+    require('mini.pairs').setup()
+    -- require('mini.indentscope').setup({ draw = { delay = 20 } })
+    require('mini.completion').setup({ lsp_completion = { source_func = 'omnifunc', auto_setup = false } })
+
     -- Autocompletion keymaps (mini.complete)
     -- To use `<Tab>` and `<S-Tab>` for navigation through completion list
-    vim.api.nvim_set_keymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
+    vim.api.nvim_setKeymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
     vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
     -- To get more consistent behavior of `<CR>`
     local keys = {
