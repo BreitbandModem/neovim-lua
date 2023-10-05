@@ -11,7 +11,7 @@ return {
       data_dir = "~/gdrive/mind.nvim/data",
     },
     ui = {
-      default_icon = ' ',
+      default_icon = '󰄱 ',
     },
   },
 }
