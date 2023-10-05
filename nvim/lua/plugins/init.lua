@@ -62,12 +62,18 @@ return {
           pager: delta --dark --paging=never
     ]]
 
+    'HiPhish/rainbow-delimiters.nvim',
 
     -- { "chrisgrieser/nvim-spider", lazy = true },
 
     {
-      'HiPhish/nvim-ts-rainbow2',
-      dependencies = { 'nvim-treesitter/nvim-treesitter' },
+      "ellisonleao/glow.nvim",
+      opts = {
+        style = "dark",
+        width_ratio = 0.9,
+        height_ratio = 0.9,
+      },
+      cmd = "Glow",
     },
 
   }
