@@ -3,20 +3,7 @@ return {
   'echasnovski/mini.nvim',
   version = '*',
   config = function ()
-    require('mini.ai').setup({
-      custom_textobjects = {
-        -- camel case
-        w = {
-          {
-            '%u[%l%d]+%f[^%l%d]',
-            '%f[%S][%l%d]+%f[^%l%d]',
-            '%f[%P][%l%d]+%f[^%l%d]',
-            '^[%l%d]+%f[^%l%d]',
-          },
-          '^().*()$'
-        }
-      }
-    })
+    require('mini.ai').setup()
     require('mini.comment').setup()
     require('mini.surround').setup()
     require('mini.pairs').setup()
@@ -31,7 +18,7 @@ return {
     local keys = {
       ['cr']        = vim.api.nvim_replace_termcodes('<CR>', true, true, true),
       ['ctrl-y']    = vim.api.nvim_replace_termcodes('<C-y>', true, true, true),
-      ['ctrl-y_cr'] = vim.api.nvim_replace_termcodes('<C-y><CR>', true, true, true),
+      ['ctrl-y_cr'] = vim.api.nvim_replace_termcodes('<C-n>', true, true, true),
     }
     _G.cr_action = function()
       if vim.fn.pumvisible() ~= 0 then
