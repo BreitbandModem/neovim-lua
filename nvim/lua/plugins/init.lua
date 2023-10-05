@@ -62,10 +62,12 @@ return {
           pager: delta --dark --paging=never
     ]]
 
+
+    -- { "chrisgrieser/nvim-spider", lazy = true },
+
     {
       'HiPhish/nvim-ts-rainbow2',
       dependencies = { 'nvim-treesitter/nvim-treesitter' },
     },
 
-    { "chrisgrieser/nvim-spider", lazy = true },
   }

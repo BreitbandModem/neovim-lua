@@ -142,10 +142,6 @@ return {
       K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Symbol Info" },
       ["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Previous Code Action" },
       ["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next Code Action" },
-      w = { "<cmd>lua require('spider').motion('w')<CR>", "spider-w" },
-      e = { "<cmd>lua require('spider').motion('e')<CR>", "spider-e" },
-      b = { "<cmd>lua require('spider').motion('b')<CR>", "spider-b" },
-      ge = { "<cmd>lua require('spider').motion('ge')<CR>", "spider-ge" },
       -- <c-k> conflicts with the split window navigation (window up). As signature_help doesn't seem useful for now, I disable it
       -- ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
     }
