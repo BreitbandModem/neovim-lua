@@ -182,12 +182,6 @@ brew install ripgrep
 # glow is required for markdown preview
 brew install glow
 
-# Install node-debug2 for the dap plugin
-git clone https://github.com/microsoft/vscode-node-debug2.git
-cd vscode-node-debug2
-npm install
-NODE_OPTIONS=--no-experimental-fetch npm run build
-
 # Install a custom font to support icons
 brew tap homebrew/cask-fonts
 brew install font-jetbrains-mono-nerd-font
@@ -198,7 +192,7 @@ brew install universal-ctags
 
 Configure the newly installed font in the terminal app (e.g. iterm2).
 
-Make sure that the debug adapter config in [dap.lua](nvim/lua/plugins/dap.lua) points to the path of the cloned vscode-node-debug2 repo.
+Make sure that the debug adapter config in [dap.lua](nvim/lua/plugins/dap.lua) points to the path of the cloned vscode-js-debug repo.
 
 4. Install LSP language servers
 
