@@ -49,6 +49,59 @@ return {
             "<node_internals>/**/*.js"
           }
         },
+        {
+          type = "pwa-node",
+          request = "launch",
+          name = "Local Script Runner",
+          protocol = "inspector",
+          console = 'integratedTerminal',
+
+          runtimeExecutable = "node",
+          runtimeArgs = {"--nolazy", "-r", "ts-node/register/transpile-only"},
+          args = {"scripts/rankingSnapshotMigration/bigQuery.ts", "production"},
+          cwd = "${workspaceFolder}/server",
+
+
+          restart = true,
+          sourceMaps = true,
+          timeout = 5000,
+          showAsyncStacks = true,
+          sourceMapPathOverrides = {
+            ['/app/*'] = "${workspaceFolder}/*"
+          },
+          skipFiles = {
+            "/app/server/node_modules/**/*.js",
+            "<node_internals>/**/*.js"
+          }
+        },
+        {
+          type = "pwa-node",
+          request = "launch",
+          name = "Docker Script Runner",
+          protocol = "inspector",
+          console = 'integratedTerminal',
+
+          runtimeExecutable = "docker-compose",
+          runtimeArgs = {"exec", "lh-server", "node", "--inspect=0.0.0.0:9228", "--nolazy", "-r", "ts-node/register/transpile-only"},
+          args = {"scripts/migrateSnapshotsToMongo.ts", "production"},
+          cwd = "${workspaceFolder}",
+
+          attachSimplePort = 9228,
+          address = "localhost",
+          localRoot = "${workspaceFolder}",
+          remoteRoot = "/app",
+          restart = true,
+          sourceMaps = true,
+          timeout = 5000,
+          showAsyncStacks = true,
+          sourceMapPathOverrides = {
+            ['/app/*'] = "${workspaceFolder}/*"
+          },
+          skipFiles = {
+            "/app/server/node_modules/**/*.js",
+            "<node_internals>/**/*.js"
+          }
+        },
       }
       dap.configurations.javascript = dap.configurations.typescript
 
@@ -113,6 +166,6 @@ return {
   {
     'microsoft/vscode-js-debug',
     lazy = true,
-    build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+    build = 'rm -rf out && git checkout main && git reset --hard && git pull && npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
   }
 }
