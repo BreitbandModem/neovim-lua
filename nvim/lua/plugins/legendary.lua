@@ -43,6 +43,8 @@ return {
         description = 'Search NVIM dotfiles through telescope',
       },
     },
-    which_key = { auto_register = true },
+    extensions = {
+      which_key = { auto_register = true },
+    },
   },
 }
