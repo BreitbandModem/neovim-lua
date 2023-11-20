@@ -5,13 +5,13 @@ return {
   -- opts = {},
   init = function ()
     local highlight = {
-     "RainbowDelimiterRed",
-     "RainbowDelimiterYellow",
-     "RainbowDelimiterBlue",
-     "RainbowDelimiterOrange",
-     "RainbowDelimiterGreen",
-     "RainbowDelimiterViolet",
      "RainbowDelimiterCyan",
+     "RainbowDelimiterViolet",
+     "RainbowDelimiterBlue",
+     "RainbowDelimiterGreen",
+     "RainbowDelimiterYellow",
+     "RainbowDelimiterOrange",
+     "RainbowDelimiterRed",
     }
     vim.g.rainbow_delimiters = { highlight = highlight }
 
