@@ -112,5 +112,9 @@ return {
           },
         })
       end,
-    }
+    },
+    {
+      'dmmulroy/tsc.nvim',
+      config = true,
+    },
   }
