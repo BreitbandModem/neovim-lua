@@ -101,7 +101,18 @@ return {
             includeInlayEnumMemberValueHints = true,
           }
         }
-      }
+      },
+      -- enable once we go for vue3
+      -- init_options = {
+      --   plugins = {
+      --     {
+      --       name = '@vue/typescript-plugin',
+      --       location = '~/.nvm/versions/node/v18.18.0/lib/node_modules/@vue/typescript-plugin',
+      --       languages = { 'vue' },
+      --     },
+      --   },
+      -- },
+      -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
     }
 
     require 'lspconfig'.eslint.setup {
@@ -145,6 +156,8 @@ return {
       }
     }
 
-    require'lspconfig'.vuels.setup {}
+    -- require'lspconfig'.vuels.setup {}
+    -- No need to set `hybridMode` to `true` as it's the default value
+    require 'lspconfig'.volar.setup {}
   end
 }
