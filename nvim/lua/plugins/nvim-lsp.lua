@@ -120,9 +120,9 @@ return {
           enable = false,
           mode = "all"
         },
-        experimental = {
-          useFlatConfig = true
-        },
+        -- experimental = {
+        --   useFlatConfig = true
+        -- },
         format = true,
         nodePath = "",
         onIgnoredFiles = "off",
@@ -138,10 +138,10 @@ return {
         workingDirectory = {
           mode = "location"
         },
-        workingDirectories = {
-          { directory = "./server", },
-          { directory = "./client", }
-        }
+        -- workingDirectories = {
+        --   { directory = "./server", },
+        --   { directory = "./client", }
+        -- }
       }
     }
 

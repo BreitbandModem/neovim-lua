@@ -195,7 +195,7 @@ Configure the newly installed font in the terminal app (e.g. iterm2).
 4. Install LSP language servers
 
 ```term
-npm install -g typescript typescript-language-server vscode-langservers-extracted vls
+npm install -g typescript typescript-language-server vscode-langservers-extracted vls @vue/language-server @vue/typescript-plugin
 brew install lua-language-server
 ```
 
