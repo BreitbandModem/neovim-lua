@@ -48,6 +48,7 @@ opt.cmdheight = 1                     -- Give more space for displaying messages
 opt.signcolumn= "yes:2"               -- Add two signs beside the line numbers
 opt.laststatus = 3                    -- Use global / single status line
 -- opt.cmdheight = 0                     -- hide the command line when not in use
+vim.opt.splitkeep = "screen"          -- Default splitting will cause your main splits to jump when opening an edgebar
 
 -----------------------------------------------------------
 -- Tabs, indent, folds
