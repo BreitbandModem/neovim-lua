@@ -83,43 +83,15 @@ return {
       cmd = "Glow",
     },
 
-    'github/copilot.vim',
-
     {
-      "Bryley/neoai.nvim",
-      dependencies = {
-          "MunifTanjim/nui.nvim",
-      },
-      cmd = {
-          "NeoAI",
-          "NeoAIOpen",
-          "NeoAIClose",
-          "NeoAIToggle",
-          "NeoAIContext",
-          "NeoAIContextOpen",
-          "NeoAIContextClose",
-          "NeoAIInject",
-          "NeoAIInjectCode",
-          "NeoAIInjectContext",
-          "NeoAIInjectContextCode",
-      },
-      keys = {
-          { "<leader>as", desc = "summarize text" },
-          { "<leader>ag", desc = "generate git message" },
-      },
-      config = function()
-        require("neoai").setup({
-          -- Options go here
-          models = {
-            {
-              name = "openai",
-              model = "gpt-4",
-              params = nil,
-            },
-          },
-        })
+      'github/copilot.vim',
+      init = function()
+        vim.keymap.set('i', '<C-.>', '<Plug>(copilot-next)')
+        vim.keymap.set('i', '<C-,>', '<Plug>(copilot-previous)')
+        vim.keymap.set('i', '<C-g>', '<Plug>(copilot-suggest)')
       end,
     },
+
     {
       'dmmulroy/tsc.nvim',
       config = true,
