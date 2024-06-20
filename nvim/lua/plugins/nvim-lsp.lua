@@ -12,6 +12,12 @@ return {
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     ]]
 
+    -- enable ts-error-translations manually
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+      require("ts-error-translator").translate_diagnostics(err, result, ctx, config)
+      vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx, config)
+    end
+
     -- after the language server attaches to the current buffer
     local on_attach = function(client, bufnr)
       vim.bo[bufnr].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
