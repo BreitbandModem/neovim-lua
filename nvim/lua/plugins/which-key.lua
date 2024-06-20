@@ -52,6 +52,7 @@ return {
         t = {":lua require'dap'.step_out()<cr>", "Step Out"},
         v = {":lua require'dapui'.toggle()<cr>", "View"},
       },
+      i = { "<cmd>lua if vim.lsp.inlay_hint.is_enabled() then vim.lsp.inlay_hint.enable(false, { bufnr }) else vim.lsp.inlay_hint.enable(true, { bufnr }) end <cr>", "Inlay Hints" },
       q = {":q<CR>", "Quit"},
       Q = {":qa<CR>", "Quit and Exit"},
       s = {":w<CR>", "Save"},

@@ -20,6 +20,8 @@ return {
 
     -- after the language server attaches to the current buffer
     local on_attach = function(client, bufnr)
+      vim.lsp.inlay_hint.enable(true, { bufnr })
+
       vim.bo[bufnr].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
       -- highlight symbol under cursor
       if client.server_capabilities.documentHighlightProvider then
@@ -50,9 +52,6 @@ return {
 
     require('lspconfig').lua_ls.setup {
       on_attach = on_attach,
-    }
-    require('lspconfig').tsserver.setup {
-      on_attach = on_attach,
       settings = {
         Lua = {
           runtime = {
@@ -74,6 +73,37 @@ return {
         },
       },
     }
+
+    require('lspconfig').tsserver.setup {
+      on_attach = on_attach,
+      settings = {
+        typescript = {
+          inlayHints = {
+            includeInlayParameterNameHints = 'all',
+            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          }
+        },
+        javascript = {
+          inlayHints = {
+            includeInlayParameterNameHints = 'all',
+            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          }
+        }
+      }
+    }
+
     require 'lspconfig'.eslint.setup {
       -- cmd = { "vscode-eslint-language-server", "--stdio", "--rulesdir eslint_rules", "--ext .js,.ts,.ejs" },
       settings = {
@@ -114,6 +144,7 @@ return {
         }
       }
     }
+
     require'lspconfig'.vuels.setup {}
   end
 }
