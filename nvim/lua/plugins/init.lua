@@ -96,4 +96,7 @@ return {
       'dmmulroy/tsc.nvim',
       config = true,
     },
+
+    'sindrets/diffview.nvim',
+
   }
