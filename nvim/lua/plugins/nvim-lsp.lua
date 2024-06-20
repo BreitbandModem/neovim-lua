@@ -71,9 +71,6 @@ return {
     require 'lspconfig'.eslint.setup {
       -- cmd = { "vscode-eslint-language-server", "--stdio", "--rulesdir eslint_rules", "--ext .js,.ts,.ejs" },
       settings = {
-       options = {
-          rulePaths = {'eslint_rules'},
-        },
         codeAction = {
           disableRuleComment = {
             enable = true,
@@ -88,7 +85,7 @@ return {
           mode = "all"
         },
         experimental = {
-          useFlatConfig = false
+          useFlatConfig = true
         },
         format = true,
         nodePath = "",
@@ -104,8 +101,12 @@ return {
         validate = "on",
         workingDirectory = {
           mode = "location"
+        },
+        workingDirectories = {
+          { directory = "./server", },
+          { directory = "./client", }
         }
-}
+      }
     }
     require'lspconfig'.vuels.setup {}
   end
