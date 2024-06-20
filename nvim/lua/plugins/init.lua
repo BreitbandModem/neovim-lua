@@ -21,7 +21,14 @@ return {
       end
     },
 
-    'folke/zen-mode.nvim', -- focus current window
+    {
+      'folke/zen-mode.nvim', -- focus current window
+      opts = {
+        window = {
+          width = 150
+        }
+      },
+    },
 
     'ThePrimeagen/harpoon', -- quickly set and access bookmarks
 
