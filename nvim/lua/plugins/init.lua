@@ -220,5 +220,13 @@ return {
           }
         }
       }, -- for default options, refer to the configuration section for custom setup.
-    }
+    },
+
+    {
+      "FabijanZulj/blame.nvim",
+      config = true,
+      keys = {
+        { "<leader>gb", ":BlameToggle window<cr>", desc="Git Blame" },
+      }
+    },
   }
