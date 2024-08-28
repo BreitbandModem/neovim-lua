@@ -51,6 +51,28 @@ return {
         },
         {
           type = "pwa-node",
+          request = "attach",
+          name = "Docker: Attach to High Priority Worker",
+          protocol = "inspector",
+          console = 'integratedTerminal',
+          port = 9231,
+          restart = true,
+          sourceMaps = true,
+          address = "localhost",
+          localRoot = "${workspaceFolder}",
+          remoteRoot = "/app",
+          timeout = 50000,
+          showAsyncStacks = true,
+          sourceMapPathOverrides = {
+            ['/app/*'] = "${workspaceFolder}/*"
+          },
+          skipFiles = {
+            "/app/server/node_modules/**/*.js",
+            "<node_internals>/**/*.js"
+          }
+        },
+        {
+          type = "pwa-node",
           request = "launch",
           name = "Local Script Runner",
           protocol = "inspector",
