@@ -152,7 +152,18 @@ return {
             "${workspaceFolder}/node_modules/**"
           },
         }
-    end
+    end,
+    keys = {
+      { "<leader>db", ":lua require'dap'.toggle_breakpoint()<cr>", desc="Breakpoint" },
+      { "<leader>dc", ":lua require'dap'.continue()<cr>", desc="Attach/Continue" },
+      { "<leader>dd", ":lua require'dap'.disconnect()<cr>", desc="Detach" },
+      { "<leader>de", ":lua require'dapui'.eval()<cr>", desc="Eval" },
+      { "<leader>di", ":lua require'dap'.step_into()<cr>", desc="Step Into" },
+      { "<leader>dl", ":lua require'dap'.run_to_cursor()<cr>", desc="Run to Cursor" },
+      { "<leader>do", ":lua require'dap'.step_over()<cr>", desc="Step Over" },
+      { "<leader>dt", ":lua require'dap'.step_out()<cr>", desc="Step Out" },
+      { "<leader>dv", ":lua require'dapui'.toggle()<cr>", desc="View" },
+    },
   },
   {
     'rcarriga/nvim-dap-ui',

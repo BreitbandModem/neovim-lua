@@ -15,6 +15,21 @@ return {
     {
       'lewis6991/gitsigns.nvim',
       dependencies = { 'nvim-lua/plenary.nvim' },
+      lazy = false,
+      keys = {
+        { "<leader>gg", ":FloatermNew lazygit<CR>", desc="LazyGit" },
+        { "<leader>gp", ":Gitsigns preview_hunk<CR>", desc="Preview Hunk" },
+        { "<leader>gs", ":Gitsigns stage_hunk<CR>", desc="Stage Hunk" },
+        { "<leader>gS", ":Gitsigns stage_buffer<CR>", "Stage File"},
+        { "<leader>gu", ":Gitsigns undo_stage_hunk<CR>", desc="Un-Stage Hunk" },
+        { "<leader>gr", ":Gitsigns reset_hunk<CR>", desc="Reset Hunk" },
+        { "<leader>gR", ":Gitsigns reset_buffer<CR>", desc="Reset File" },
+        -- { "<leader>gb", ":Gitsigns blame_line<CR>", desc="Blame Line" },
+        { "<leader>gn", ":Gitsigns next_hunk<CR>", desc="Next Hunk" },
+        { "<leader>gN", ":Gitsigns prev_hunk<CR>", desc="Previous Hunk" },
+        { "<leader>gd", ":Gitsigns diffthis<CR>", desc="Diff" },
+        { "<leader>gs", ":Gitsigns stage_hunk<CR>", desc="Stage Hunk", mode = "v" },
+      },
       config = function()
         require('gitsigns').setup()
         require('scrollbar.handlers.gitsigns').setup()
@@ -23,6 +38,9 @@ return {
 
     {
       'folke/zen-mode.nvim', -- focus current window
+      keys = {
+        { "<leader>z", ":ZenMode<CR>", desc="Zen Mode" },
+      },
       opts = {
         window = {
           width = 150
@@ -30,7 +48,19 @@ return {
       },
     },
 
-    'ThePrimeagen/harpoon', -- quickly set and access bookmarks
+    {
+      'ThePrimeagen/harpoon', -- quickly set and access bookmarks
+      keys = {
+        { "<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", desc="Add file to Harpoon" },
+        { "<leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", desc="Harpoon UI" },
+        { "<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", desc="Next file" },
+        { "<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", desc="Previous file" },
+        {"<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", desc="Harpoon file 1" },
+        {"<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", desc="Harpoon file 2" },
+        {"<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", desc="Harpoon file 3" },
+        {"<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", desc="Harpoon file 4" },
+      },
+    },
 
     {
       'petertriho/nvim-scrollbar',
@@ -49,25 +79,31 @@ return {
       config = true,
     },
 
-    'voldikss/vim-floaterm',
-    -- I'm using floaterm with lazygit with the following conf:
-    --[[
-      os:
-        editCommand: 'floaterm'
-      keybinding:
-        universal:
-          return: 'q'
-      gui:
-        theme:
-          selectedLineBgColor:
-            - underline
-          selectedRangeBgColor:
-            - underline
-      git:
-        paging:
-          colorArg: never
-          pager: delta --dark --paging=never
-    ]]
+    {
+      'voldikss/vim-floaterm',
+      lazy = false,
+      keys = {
+        { "<leader>T",  ":FloatermToggle<CR>", desc="Terminal" },
+      },
+      -- I'm using floaterm with lazygit with the following conf:
+      --[[
+        os:
+          editCommand: 'floaterm'
+        keybinding:
+          universal:
+            return: 'q'
+        gui:
+          theme:
+            selectedLineBgColor:
+              - underline
+            selectedRangeBgColor:
+              - underline
+        git:
+          paging:
+            colorArg: never
+            pager: delta --dark --paging=never
+      ]]
+    },
 
     'HiPhish/rainbow-delimiters.nvim',
 
@@ -95,7 +131,7 @@ return {
     {
       'rcarriga/nvim-notify',
       init = function ()
-        vim.notify = require("notify")
+        -- vim.notify = require("notify")
       end
     },
 

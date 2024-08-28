@@ -1,5 +1,23 @@
 return {
   'neovim/nvim-lspconfig',
+  lazy = false,
+  keys = {
+    { "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc="Code Action" },
+    { "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", desc="Code Action" },
+ -- { "<leader>f", "<cmd>lua vim.lsp.buf.format({name=eslint, async=true})<CR>", desc="Format Code" },
+    { "<leader>i", "<cmd>lua if vim.lsp.inlay_hint.is_enabled() then vim.lsp.inlay_hint.enable(false, { bufnr }) else vim.lsp.inlay_hint.enable(true, { bufnr }) end <cr>", desc="Inlay Hints" },
+    { "<leader>rf", ":EslintFixAll<CR>", desc="Format Code" },
+    { "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc="Format Code" },
+    { "K", "<cmd>lua vim.lsp.buf.hover()<CR>", desc="Symbol Info" },
+    { "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", desc="Previous Code Action" },
+    { "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc="Next Code Action" },
+    -- <c-k> conflicts with the split window navigation (window up). As signature_help doesn't seem useful for now, I disable it
+    -- ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
+    { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc="Definition" },
+    { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc="Declaration" },
+    { "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc="References" },
+    { "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc="Implementation" },
+  },
   config = function ()
     --[[
     -- Mappings TODO: check if I want any of these:
@@ -20,7 +38,7 @@ return {
 
     -- after the language server attaches to the current buffer
     local on_attach = function(client, bufnr)
-      vim.lsp.inlay_hint.enable(true, { bufnr })
+      vim.lsp.inlay_hint.enable(false, { bufnr }) -- disable by default
 
       vim.bo[bufnr].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
       -- highlight symbol under cursor

@@ -15,6 +15,16 @@ return {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
+    keys = {
+      { "<leader>ff", "<Cmd>lua require('telescope').extensions.smart_open.smart_open()<CR>", desc="Smart Open" },
+      { "<leader>fg", ":GrepWithCache<CR>", desc="Grep Files" },
+      { "<leader>fb", ":Telescope buffers<CR>", desc="Buffers" },
+      { "<leader>fh", ":Telescope help_tags<CR>", desc="Help" },
+      { "<leader>fd", ":SearchDotFiles<CR>", desc="Dot Files" },
+      { "<leader>fr", ":Telescope oldfiles<CR>", desc="Recent Files" },
+      { "<leader>fs", ":Telescope git_status<CR>", desc="Git Status" },
+      { "<leader>fy", ":Telescope yank_history<CR>", desc="Yanks" },
+    },
     config = function ()
       local telescope_previewers = require("telescope.previewers")
       local telescope = require('telescope')
