@@ -229,4 +229,6 @@ return {
         { "<leader>gb", ":BlameToggle window<cr>", desc="Git Blame" },
       }
     },
+
+    { 'glacambre/firenvim', build = ":call firenvim#install(0)" },
   }
