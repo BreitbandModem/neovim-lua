@@ -170,7 +170,8 @@ brew install neovim
 
 ```term
 git clone https://github.com/BreitbandModem/neovim-lua.git /Users/****/github/neovim-lua
-ln -s /Users/****/github/neovim-lua/nvim /Users/****/.config/nvim
+ln -s /Users/****/github/neovim-lua/lhnvim /Users/****/.config/lhnvim
+export NVIM_APPNAME="lhnvim"
 ```
 
 4. Install some plugin dependencies

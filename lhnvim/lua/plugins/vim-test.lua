@@ -23,7 +23,7 @@ return {
     g['test#javascript#mocha#options'] = '--config tests/unit/mocharc.js'
 
     -- API Tests
-    -- local dockerCompose = "docker-compose exec --env INVERSIFY_SCOPE='Request' --env LOG_LEVEL='debug' --env CONFIG_ENV=test "
+    local dockerCompose = "docker-compose exec --env INVERSIFY_SCOPE='Request' --env LOG_LEVEL='debug' --env CONFIG_ENV=test "
     -- g['test#javascript#mocha#executable'] = "cd server; "
     --   .. dockerCompose .. "-T mysql mysql -uroot -p123123 < db/clear_test_db.sql; "
     --   .. dockerCompose .. "-T mongo mongo -uroot -p123123123 < ./db/clear_test_db.mongosh; "

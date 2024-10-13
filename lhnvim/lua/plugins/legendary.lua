@@ -36,7 +36,7 @@ return {
           local telescope_builtin = require('telescope.builtin')
           telescope_builtin.find_files({
             prompt_title = "< VimRC >",
-            cwd = "~/.config/nvim",
+            cwd = "~/.config/lhnvim",
             hidden = true,
           })
         end,

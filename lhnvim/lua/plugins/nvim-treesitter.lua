@@ -5,7 +5,7 @@ return {
     main = 'nvim-treesitter.configs',
     opts = {
       ensure_installed = {
-        "help", "typescript", "javascript", "gitignore", "regex", "css", "json", "vim", "lua", "markdown_inline", "http", "vue", "yaml",
+        "vimdoc", "typescript", "javascript", "gitignore", "regex", "css", "json", "vim", "lua", "markdown_inline", "http", "vue", "yaml",
       },
       auto_install = true,
       highlight = { enable = true },
