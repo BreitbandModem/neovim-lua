@@ -2,6 +2,18 @@
 return {
   {
     'mfussenegger/nvim-dap',
+    keys = {
+      { "<leader>db", ":lua require'dap'.toggle_breakpoint()<cr>", desc="Breakpoint" },
+      { "<leader>dc", ":lua require'dap'.continue()<cr>", desc="Attach/Continue" },
+      { "<leader>dd", ":lua require'dap'.disconnect()<cr>", desc="Detach" },
+      { "<leader>de", ":lua require'dapui'.eval()<cr>", desc="Eval" },
+      { "<leader>di", ":lua require'dap'.step_into()<cr>", desc="Step Into" },
+      { "<leader>dl", ":lua require'dap'.run_to_cursor()<cr>", desc="Run to Cursor" },
+      { "<leader>do", ":lua require'dap'.step_over()<cr>", desc="Step Over" },
+      { "<leader>dt", ":lua require'dap'.step_out()<cr>", desc="Step Out" },
+      { "<leader>dv", ":lua require'dapui'.toggle()<cr>", desc="View" },
+      { "<leader>dn", ":lua require'osv'.launch({port = 8086})<cr>", desc="NVIM" },
+    },
     config = function ()
       local dap = require('dap')
       dap.configurations.typescript = {
@@ -153,17 +165,6 @@ return {
           },
         }
     end,
-    keys = {
-      { "<leader>db", ":lua require'dap'.toggle_breakpoint()<cr>", desc="Breakpoint" },
-      { "<leader>dc", ":lua require'dap'.continue()<cr>", desc="Attach/Continue" },
-      { "<leader>dd", ":lua require'dap'.disconnect()<cr>", desc="Detach" },
-      { "<leader>de", ":lua require'dapui'.eval()<cr>", desc="Eval" },
-      { "<leader>di", ":lua require'dap'.step_into()<cr>", desc="Step Into" },
-      { "<leader>dl", ":lua require'dap'.run_to_cursor()<cr>", desc="Run to Cursor" },
-      { "<leader>do", ":lua require'dap'.step_over()<cr>", desc="Step Over" },
-      { "<leader>dt", ":lua require'dap'.step_out()<cr>", desc="Step Out" },
-      { "<leader>dv", ":lua require'dapui'.toggle()<cr>", desc="View" },
-    },
   },
   {
     'rcarriga/nvim-dap-ui',
@@ -200,5 +201,22 @@ return {
     'microsoft/vscode-js-debug',
     lazy = true,
     build = 'rm -rf out && git checkout main && git reset --hard && git pull && npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
-  }
+  },
+  {
+    'jbyuki/one-small-step-for-vimkind',
+    config = function ()
+      local dap = require"dap"
+      dap.configurations.lua = {
+        {
+          type = 'nlua',
+          request = 'attach',
+          name = "Attach to running Neovim instance",
+        }
+      }
+
+      dap.adapters.nlua = function(callback, config)
+        callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+      end
+    end,
+  },
 }

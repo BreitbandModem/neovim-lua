@@ -60,6 +60,8 @@ opt.smartindent = true                -- Autoindent new lines
 opt.foldmethod = "expr"               -- Get folds from treesitter
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevelstart = 99               -- all folds open by default
+opt.conceallevel = 2              -- to conceal orgmode links
+opt.concealcursor = 'nc'
 
 -----------------------------------------------------------
 -- Memory, CPU

@@ -14,6 +14,7 @@ return {
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
+      { "nvim-orgmode/telescope-orgmode.nvim" },
     },
     keys = {
       { "<leader>ff", "<Cmd>lua require('telescope').extensions.smart_open.smart_open()<CR>", desc="Smart Open" },
@@ -24,6 +25,9 @@ return {
       { "<leader>fr", ":Telescope oldfiles<CR>", desc="Recent Files" },
       { "<leader>fs", ":Telescope git_status<CR>", desc="Git Status" },
       { "<leader>fy", ":Telescope yank_history<CR>", desc="Yanks" },
+      { "<leader>oR", ":lua require('telescope').extensions.orgmode.refile_heading({ mode = 'orgfiles' })<CR>", desc="Orgmode Refile" },
+      { "<leader>oif", ":Telescope orgmode insert_link<CR>", desc="Link Orgfile" },
+      { "<leader>of", ":Telescope orgmode search_headings<CR>", desc="Find Orgfile" },
     },
     config = function ()
       local telescope_previewers = require("telescope.previewers")
@@ -53,6 +57,7 @@ return {
       telescope.load_extension("yank_history")
       telescope.load_extension("ui-select")
       telescope.load_extension("lsp_handlers")
+      telescope.load_extension("orgmode")
     end
   },
 }
