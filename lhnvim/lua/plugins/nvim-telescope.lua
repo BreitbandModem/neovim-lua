@@ -15,6 +15,7 @@ return {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
       { "nvim-orgmode/telescope-orgmode.nvim" },
+      { 'folke/todo-comments.nvim' },
     },
     keys = {
       { "<leader>ff", "<Cmd>lua require('telescope').extensions.smart_open.smart_open()<CR>", desc="Smart Open" },
@@ -24,6 +25,7 @@ return {
       { "<leader>fd", ":SearchDotFiles<CR>", desc="Dot Files" },
       { "<leader>fr", ":Telescope oldfiles<CR>", desc="Recent Files" },
       { "<leader>fs", ":Telescope git_status<CR>", desc="Git Status" },
+      { "<leader>ft", ":TodoTelescope keywords=MB<CR>", desc="TODOS [MB]" },
       { "<leader>fy", ":Telescope yank_history<CR>", desc="Yanks" },
       { "<leader>oR", ":lua require('telescope').extensions.orgmode.refile_heading({ mode = 'orgfiles' })<CR>", desc="Orgmode Refile" },
       { "<leader>oif", ":Telescope orgmode insert_link<CR>", desc="Link Orgfile" },

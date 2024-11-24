@@ -291,4 +291,14 @@ return {
       { "<leader>gg", ":Neogit<CR>", desc="Neogit" },
     },
   },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      keywords = {
+        MB = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+      },
+    },
+  },
 }
