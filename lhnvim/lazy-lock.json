@@ -8,6 +8,7 @@
   "feline.nvim": { "branch": "master", "commit": "3587f57480b88e8009df7b36dc84e9c7ff8f2c49" },
   "firenvim": { "branch": "master", "commit": "64f9389b88c8b0c7667d45c171a5f25c42d852fb" },
   "floating-input.nvim": { "branch": "main", "commit": "0c3393891cbf07745fa3997d45aac5461b0d892f" },
+  "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" },
   "gitsigns.nvim": { "branch": "main", "commit": "ee7634ab4f0a6606438fe13e16cbf2065589a5ed" },
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },
   "harpoon": { "branch": "master", "commit": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3" },

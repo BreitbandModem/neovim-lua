@@ -301,4 +301,13 @@ return {
       },
     },
   },
+
+  {
+    'akinsho/git-conflict.nvim',
+    version = "*",
+    config = true,
+    keys = {
+      { "<leader>gc", ":GitConflictListQf<CR>", desc="Git Conflict Quickfix" },
+    },
+  },
 }
