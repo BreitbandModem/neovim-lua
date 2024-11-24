@@ -17,7 +17,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     lazy = false,
     keys = {
-      { "<leader>gg", ":FloatermNew lazygit<CR>", desc="LazyGit" },
+      -- { "<leader>gg", ":FloatermNew lazygit<CR>", desc="LazyGit" },
       { "<leader>gp", ":Gitsigns preview_hunk<CR>", desc="Preview Hunk" },
       { "<leader>gs", ":Gitsigns stage_hunk<CR>", desc="Stage Hunk" },
       { "<leader>gS", ":Gitsigns stage_buffer<CR>", "Stage File"},
@@ -278,6 +278,7 @@ return {
       })
     end,
   },
+
   {
     "NeogitOrg/neogit",
     dependencies = {
@@ -285,6 +286,9 @@ return {
       "sindrets/diffview.nvim",        -- optional - Diff integration
       "nvim-telescope/telescope.nvim", -- optional
     },
-    config = true
+    config = true,
+    keys = {
+      { "<leader>gg", ":Neogit<CR>", desc="Neogit" },
+    },
   },
 }
