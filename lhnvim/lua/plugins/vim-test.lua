@@ -18,12 +18,13 @@ return {
     g['test#runner_commands'] = {'Mocha'}
     g['test#javascript#runner'] = 'mocha'
 
+    local dockerCompose = "docker-compose exec --env INVERSIFY_SCOPE='Request' --env LOG_LEVEL='debug' --env CONFIG_ENV=test "
+
     -- Unit Tests
-    g['test#javascript#mocha#executable'] = "docker-compose exec --env INVERSIFY_SCOPE='Request' --env LOG_LEVEL='debug' --env CONFIG_ENV=test lh-server npx ts-mocha --enable-source-maps"
+    g['test#javascript#mocha#executable'] = dockerCompose .. "lh-server npx ts-mocha --enable-source-maps"
     g['test#javascript#mocha#options'] = '--config tests/unit/mocharc.js'
 
     -- API Tests
-    local dockerCompose = "docker-compose exec --env INVERSIFY_SCOPE='Request' --env LOG_LEVEL='debug' --env CONFIG_ENV=test "
     -- g['test#javascript#mocha#executable'] = "cd server; "
     --   .. dockerCompose .. "-T mysql mysql -uroot -p123123 < db/clear_test_db.sql; "
     --   .. dockerCompose .. "-T mongo mongo -uroot -p123123123 < ./db/clear_test_db.mongosh; "
