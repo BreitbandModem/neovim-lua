@@ -12,12 +12,25 @@ return {
       { "<leader>do", ":lua require'dap'.step_over()<cr>", desc="Step Over" },
       { "<leader>dt", ":lua require'dap'.step_out()<cr>", desc="Step Out" },
       { "<leader>dv", ":lua require'dapui'.toggle()<cr>", desc="View" },
-      { "<leader>dn", ":lua require'osv'.launch({port = 8086})<cr>", desc="NVIM" },
+      { "<leader>dn", ":lua require'osv'.launch({port = 8086})<cr>", desc="Start nvim debug server" },
     },
     config = function ()
       local dap = require('dap')
+      dap.adapters["pwa-node"] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "node",
+          args = {
+            vim.fn.stdpath('data') .. '/lazy/vscode-js-debug/out/src/dapDebugServer.js',
+            "${port}",
+          },
+        }
+      }
       dap.configurations.typescript = {
         {
+          trace = true,
           type = "pwa-node",
           request = "attach",
           name = "Docker: Attach to Node",
@@ -185,22 +198,9 @@ return {
     end
   },
   {
-    'mxsdev/nvim-dap-vscode-js',
-    dependencies = {'mfussenegger/nvim-dap'},
-    opts = {
-      -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-      debugger_path = vim.fn.stdpath('data') .. '/lazy/vscode-js-debug',
-      -- debugger_cmd = { "js-debug-adapter" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
-      adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' }, -- which adapters to register in nvim-dap
-      -- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
-      -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
-      -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
-    },
-  },
-  {
     'microsoft/vscode-js-debug',
     lazy = true,
-    build = 'rm -rf out && git checkout main && git reset --hard && git pull && npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+    build = 'git checkout main && git pull && npm install --legacy-peer-deps && npx gulp dapDebugServer && mv dist out && git reset --hard',
   },
   {
     'jbyuki/one-small-step-for-vimkind',
