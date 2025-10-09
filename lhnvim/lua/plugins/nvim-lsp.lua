@@ -13,10 +13,10 @@ return {
     { "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", desc="Next Code Action" },
     -- <c-k> conflicts with the split window navigation (window up). As signature_help doesn't seem useful for now, I disable it
     -- ["<c-k>"] = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Info" },
-    { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc="Definition" },
+    { "gd", ":Telescope lsp_definitions<CR>", desc="Definition" },
     { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc="Declaration" },
-    { "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc="References" },
-    { "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc="Implementation" },
+    { "gr", ":Telescope lsp_references<CR>", desc="References" },
+    { "gi", ":Telescope lsp_implementations<CR>", desc="Implementation" },
   },
   config = function ()
     --[[
@@ -68,7 +68,7 @@ return {
       end
     end
 
-    require('lspconfig').lua_ls.setup {
+    vim.lsp.config('lua_ls', {
       on_attach = on_attach,
       settings = {
         Lua = {
@@ -90,9 +90,10 @@ return {
           },
         },
       },
-    }
+    })
+    vim.lsp.enable('lua_ls')
 
-    require('lspconfig').ts_ls.setup {
+    vim.lsp.config('ts_ls', {
       on_attach = on_attach,
       settings = {
         typescript = {
@@ -131,9 +132,10 @@ return {
       --   },
       -- },
       -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-    }
+    })
+    vim.lsp.enable('ts_ls')
 
-    require 'lspconfig'.eslint.setup {
+    vim.lsp.config('eslint', {
       -- cmd = { "vscode-eslint-language-server", "--stdio", "--rulesdir eslint_rules", "--ext .js,.ts,.ejs" },
       settings = {
         codeAction = {
@@ -172,10 +174,10 @@ return {
         --   { directory = "./client", }
         -- }
       }
-    }
+    })
+    vim.lsp.enable('eslint')
 
-    -- require'lspconfig'.vuels.setup {}
-    -- No need to set `hybridMode` to `true` as it's the default value
-    require 'lspconfig'.volar.setup {}
+    vim.lsp.config('vue_ls', {})
+    vim.lsp.enable('vue_ls')
   end
 }

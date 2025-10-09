@@ -200,7 +200,6 @@ return {
   {
     'microsoft/vscode-js-debug',
     lazy = true,
-    build = 'git checkout main && git pull && npm install --legacy-peer-deps && npx gulp dapDebugServer && mv dist out && git reset --hard',
   },
   {
     'jbyuki/one-small-step-for-vimkind',

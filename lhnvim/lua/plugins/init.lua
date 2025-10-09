@@ -310,4 +310,15 @@ return {
       { "<leader>gc", ":GitConflictListQf<CR>", desc="Git Conflict Quickfix" },
     },
   },
+  {
+    "mason-org/mason.nvim",
+    opts = {}
+  },
+  {
+    "zapling/mason-lock.nvim", init = function()
+      require("mason-lock").setup({
+          lockfile_path = vim.fn.stdpath("config") .. "/mason-lock.json" -- (default)
+      })
+    end
+  },
 }
