@@ -151,11 +151,6 @@ cmd [[
     autocmd BufLeave term://* stopinsert
 ]]
 
--- Eslint on save
-cmd [[
-  autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll
-]]
-
 -- Dynamic line numbers
 autocmd({"BufEnter", "FocusGained", "WinEnter"}, {
   desc = "use absolute line numbers on unfocused buffer",

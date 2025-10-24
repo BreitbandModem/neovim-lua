@@ -176,6 +176,15 @@ return {
       }
     })
     vim.lsp.enable('eslint')
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = { "*.js", "*.ts", "*.jsx", "*.tsx" }, -- adjust filetypes as needed
+      callback = function()
+        vim.lsp.buf.code_action({
+          context = { only = { "source.fixAll.eslint" } },
+          apply = true,
+        })
+      end,
+    })
 
     vim.lsp.config('vue_ls', {})
     vim.lsp.enable('vue_ls')
